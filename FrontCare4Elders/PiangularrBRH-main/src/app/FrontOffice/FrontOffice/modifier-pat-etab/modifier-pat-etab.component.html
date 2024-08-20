@@ -1,0 +1,21 @@
+<form>
+
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="patient.nom" [ngModelOptions]="{ standalone: true }" readonly>
+    </div>
+    <div class="form-group">
+      <label for="prenom">Prénom:</label>
+      <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="patient.prenom" [ngModelOptions]="{ standalone: true }" readonly>
+    </div>
+    <div class="form-group">
+      <label for="typatient">Etat Du Patient:</label>
+      <select class="form-control" [(ngModel)]="patient.typatient" [ngModelOptions]="{ standalone: true }">
+        <option value="NORMAL">NORMALE</option>
+        <option value="URGENT">URGENT</option>
+        <option value="DECEDE">DECEDE</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="modifierTypePatient(patient.idpatient,patient.typatient)">Enregistrer</button>
+  </form>
+  

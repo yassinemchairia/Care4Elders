@@ -1,0 +1,16 @@
+<div class="favoris-container">
+  <div *ngIf="produitsFavoris.length === 0" class="empty-favoris">
+    <p>Aucun produit favori disponible.</p>
+  </div>
+  
+  <div *ngFor="let produit of produitsFavoris" class="favoris-item">
+    <div class="favoris-details">
+      <img [src]="produit.image" alt="Image du produit" class="produit-image">
+      <h3 class="favoris-title"><span class="label">Nom:</span> {{ produit.nomproduit }}</h3>
+      <p class="favoris-description"><span class="label">Description:</span> {{ produit.description }}</p>
+      <p class="favoris-price"><span class="label">Prix:</span> {{ produit.prix }}TND</p>
+      <button class="favoris-button" (click)="supprimerProduitFavori(produit.idProduit)">Supprimer</button>
+    </div>
+  </div>
+</div>
+

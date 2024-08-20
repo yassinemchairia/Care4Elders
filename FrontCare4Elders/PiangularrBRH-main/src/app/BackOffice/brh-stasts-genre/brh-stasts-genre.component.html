@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <select #etablissementSelect class="form-select mb-3" aria-label="Choisir un établissement" (change)="onEtablissementSelected(+etablissementSelect.value)">
+          <option value="" disabled selected>Choisir un établissement</option>
+          <option *ngFor="let etab of etablissementsList$ | async" [value]="etab.idEtab">{{ etab.nomEtab }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <canvas #barChart></canvas>
+      </div>
+    </div>
+  </div>
+  

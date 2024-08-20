@@ -1,0 +1,33 @@
+<form>
+  <div class="form-group">
+    <label for="nomproduit">nomproduit</label>
+    <input type="text" class="form-control"   [(ngModel)]="produit.nomproduit" [ngModelOptions]="{standalone: true}" placeholder="nomproduit">
+  </div>
+  <div class="form-group">
+    <label for="numFixe">Description</label>
+    <input type="text" class="form-control" [(ngModel)]="produit.description" [ngModelOptions]="{standalone: true}"  placeholder="description">
+  </div>
+  
+    <div class="form-group">
+      <label for="prix">prix</label>
+      <input type="number" class="form-control"  [(ngModel)]="produit.prix" [ngModelOptions]="{standalone: true}" placeholder="prix">
+    </div>
+    <div class="form-group">
+      <label for="prix">prix initiale</label>
+      <input type="number" class="form-control"  [(ngModel)]="produit.prixInitial" [ngModelOptions]="{standalone: true}" placeholder="prix">
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <img [src]="produit.image" alt="Ancienne Image" style="width: 20%;height: 20%;" class="mr-2">
+        <input type="file" style="display: none;" #fileInput accept="image/*" (change)="onFileSelected($event)">
+  
+      </div>
+    </div>
+      <div>      <button type="button" class="btn btn-secondary" (click)="fileInput.click()">Modifier Image</button>
+  </div>
+  
+  <div class="col-3">
+    <button (click)="modifierProduit()" class="btn btn-primary form-control m-1 text-light">Update</button>
+</div>
+
+</form>

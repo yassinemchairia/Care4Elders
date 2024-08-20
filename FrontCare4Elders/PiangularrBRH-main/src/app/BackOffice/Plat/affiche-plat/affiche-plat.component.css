@@ -1,0 +1,72 @@
+.badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .badge {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 250px;
+    cursor: pointer;
+  }
+  
+  .badge:hover {
+    transform: translateY(-3px);
+  }
+  
+  .chef-icon {
+    /* Ajouter le contenu de l'icône de chapeau de chef via un SVG ou une fonte d'icônes ici */
+    margin-right: 15px;
+  }
+  
+  .badge-details {
+    text-align: left;
+  }
+  
+  .badge-title {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+  }
+  
+  .company-message {
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  .badge-accents {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .accent-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #333;
+  }
+  
+  .cutlery-icon {
+    /* Ajouter le contenu de l'icône de couverts via un SVG ou une fonte d'icônes ici */
+    margin: 0 5px;
+  }
+  
+  .badge-gold .accent-line {
+    background-color: #D4AF37;
+  }
+  
+  .badge-silver .accent-line {
+    background-color: #C0C0C0;
+  }
+  
+  .badge-bronze .accent-line {
+    background-color: #cd7f32;
+  }
+  

@@ -1,0 +1,44 @@
+/* Styles pour les éléments de la liste des activités */
+.activity-item {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Style du nom de l'activité (en gras et couleur) */
+.activity-name {
+  font-weight: bold;
+  color: #4285f4; /* Couleur bleue */
+  margin-bottom: 10px; /* Marge inférieure pour séparer les éléments */
+}
+
+/* Styles pour les autres informations */
+.activity-item p {
+  font-size: 14px; /* Taille de police légèrement plus petite */
+  color: #555; /* Couleur de texte grise */
+  margin-bottom: 5px; /* Marge inférieure pour séparer les éléments */
+}
+
+/* Styles pour les badges en fonction du type */
+.gold-badge {
+  background-color: gold;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.silver-badge {
+  background-color: silver;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.bronze-badge {
+  background-color: #cd7f32;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+}

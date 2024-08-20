@@ -1,0 +1,246 @@
+.custom-block-wrap {
+    padding: 15px;
+  }
+  
+  .custom-block {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .custom-block:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-block-image {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .custom-block-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  .card-footer {
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  .custom-block .custom-block-image {
+    width: 100%; /* Ajustez la largeur de l'image selon vos besoins */
+    height: auto; /* Assurez-vous que la hauteur est ajustée automatiquement pour conserver les proportions de l'image */
+    max-height: 200px;
+}
+.custom-block-wrap {
+    padding: 15px;
+  }
+  
+  .custom-block {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-align: center; /* Centrer le contenu de la carte */
+  }
+  
+  .custom-block:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-block-image {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    max-height: 200px; /* Limiter la hauteur de l'image */
+    object-fit: cover; /* Assurer que l'image remplit correctement le conteneur */
+  }
+  
+  .custom-block-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 2rem; /* Taille de police plus grande */
+    font-weight: bold;
+    color: #007bff; /* Couleur du texte personnalisée */
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Convertir le texte en majuscules */
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .card-footer {
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+  }
+  .custom-block-wrap {
+    padding: 15px;
+  }
+  
+  .custom-block {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .custom-block:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); /* Changement de l'ombre lors du survol */
+    border-color: #ff015e; /* Changement de la couleur de la bordure lors du survol */
+    background-color: #f0f8ff; /* Changement de la couleur de fond lors du survol */
+  }
+  
+  .custom-block-image {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .custom-block-body {
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff; /* Couleur du texte en blanc */
+    text-transform: uppercase; /* Convertir le texte en majuscules */
+    background-color: #c13939; /* Couleur de fond */
+    padding: 10px 0px; /* Ajouter un espacement intérieur pour le texte */
+    border-radius: 5px; /* Arrondir les coins */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-align: center; /* Centrer le texte horizontalement */
+    letter-spacing: 1px; /* Espacement entre les lettres */
+    font-family: 'Arial', sans-serif; /* Utilisation d'une police de caractères différente */
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #333; /* Couleur différente pour les autres attributs */
+    margin-bottom: 8px;
+  }
+  
+  .card-footer {
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  .favorite {
+    color: red; /* Exemple de style pour indiquer qu'une activité est un favori */
+  }  
+
+  button {
+    cursor: pointer;
+  }
+  
+  button.like {
+    color: green;
+  }
+  
+  button.dislike {
+    color: red;
+  }
+  .btn {
+    cursor: pointer;
+    outline: 0;
+    color: #AAA;
+    border: none; /* Supprimer le bord du bouton pour un aspect plus épuré */
+    background: none; /* Supprimer l'arrière-plan du bouton pour un aspect minimaliste */
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  .red {
+    color: red;
+  }
+  .green-button {
+    background-color: #4CAF50; /* Couleur verte */
+    color: white; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espacement intérieur */
+    text-align: center; /* Centrer le texte */
+    text-decoration: none; /* Pas de soulignement du texte */
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Coins arrondis */
+  }
+  
+  .green-button:hover {
+    background-color: #45a049; /* Couleur verte plus sombre au survol */
+  }

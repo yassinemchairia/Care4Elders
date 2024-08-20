@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="templatemo-content-container">
+    <div class="badge-container">
+    <div *ngIf="isGoldBadge()" >
+        <div class="badge badge-gold">
+            <span class="chef-icon"><i class="fas fa-user-chef"></i></span>
+            <div class="badge-details">
+              <h2 class="badge-title">Gold Chef</h2>
+              <p class="company-message">Company Message</p>
+              <div class="badge-accents">
+                <span class="accent-line"></span>
+                <span class="cutlery-icon"><i class="fas fa-utensils"></i></span>
+                <span class="accent-line"></span>
+              </div>
+            </div>
+          </div>
+    </div>
+      <div *ngIf="isSilverBadge()" class="badge badge-silver">
+        <div class="badge badge-silver">
+            <span class="chef-icon"><i class="fas fa-user-chef"></i></span>
+            <div class="badge-details">
+              <h2 class="badge-title">Silver Chef</h2>
+              <p class="company-message">Company Message</p>
+              <div class="badge-accents">
+                <span class="accent-line"></span>
+                <span class="cutlery-icon"><i class="fas fa-utensils"></i></span>
+                <span class="accent-line"></span>
+              </div>
+            </div>
+          </div>
+              </div>
+      <div *ngIf="isBronzeBadge()" class="badge badge-bronze">
+        <div class="badge badge-bronze">
+            <span class="chef-icon"><i class="fas fa-user-chef"></i></span>
+            <div class="badge-details">
+              <h2 class="badge-title">Bronze Chef</h2>
+              <p class="company-message">Company Message</p>
+              <div class="badge-accents">
+                <span class="accent-line"></span>
+                <span class="cutlery-icon"><i class="fas fa-utensils"></i></span>
+                <span class="accent-line"></span>
+              </div>
+            </div>
+          </div>
+              </div>
+    </div>
+
+    <button class="btn btn-success mb-3" (click)="AjouterPlat()">Ajouter Plat</button>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Plats</div>
+        <div class="panel-body">
+            <div class="panel-body d-flex justify-content-center mb-3">
+                <!-- Ajout d'un label pour la barre de recherche -->
+                <label for="searchInput" class="sr-only">Recherche</label>
+                <!-- Utilisation de la classe 'form-control' pour améliorer le style -->
+                <input type="text" id="searchInput" [(ngModel)]="searchText" class="form-control" placeholder="Search..." />
+                <!-- Ajout d'une icône de recherche -->
+                <span class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </span>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom Plat</th>
+                        <th>Description Plat</th>
+                        <th>Prix Plat</th>
+                        <!-- <th>Date Plat</th> -->
+                        <th>Type Plat</th>
+                        <th>Type Repas</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let plat of plats | filter: searchText | paginate: { itemsPerPage: pageSize, currentPage: page }">
+                        <td>{{ plat.nomPlat }}</td>
+                        <td>{{ plat.descPlat }}</td>
+                        <td>{{ plat.prixPlat }}</td>
+                        <!-- <td>{{ plat.datePlat | date: 'dd MM yyyy' }}</td> -->
+                        <td>{{ plat.typePlat }}</td>
+                        <td>{{ plat.typeRepas }}</td>
+                        <td>
+                            <button (click)="modifierPlat(plat.idPlat)" class="btn btn-info">Edit</button>
+                            <button (click)="deleteT(plat.idPlat)" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>

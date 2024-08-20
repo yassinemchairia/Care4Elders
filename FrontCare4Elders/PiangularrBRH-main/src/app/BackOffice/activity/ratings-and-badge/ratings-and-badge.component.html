@@ -1,0 +1,29 @@
+<!-- <div class="templatemo-content-container">
+    <div *ngFor="let activityName of ratingsAndBadges | keyvalue">
+      <div>
+        <h4>{{ activityName.key }}</h4>
+        <p><strong>Nom de l'organisateur :</strong> {{ activityName.value.organizerFirstName }} {{ activityName.value.organizerLastName }}</p>
+        <p><strong>Badge de l'organisateur :</strong> {{ activityName.value.organizerBadge }}</p>
+        <p><strong>Note de l'activité :</strong> {{ activityName.value.activityRating }}</p>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="templatemo-content-container">
+    <canvas #chartCanvas></canvas>
+  
+    <div *ngFor="let activity of ratingsAndBadges | keyvalue" class="activity-item">
+      <div>
+        <h4 class="activity-name">{{ activity.key }}</h4>
+        <p><strong>Nom et prénom de l'organisateur :</strong> {{ activity.value.organizerFirstName }} {{ activity.value.organizerLastName }}</p>
+        <p><strong>Badge de l'organisateur :</strong>
+          <span [ngClass]="getBadgeClass(activity.value.organizerBadge)">
+            {{ activity.value.organizerBadge }}
+          </span>
+        </p>
+        <p><strong>Note de l'activité :</strong> {{ activity.value.activityRating }}</p>
+      </div>
+    </div>
+  </div>
+  
+  

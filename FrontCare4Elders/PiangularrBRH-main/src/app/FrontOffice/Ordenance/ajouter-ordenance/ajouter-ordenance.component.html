@@ -1,0 +1,92 @@
+<div id="contentToConvert" class="form-wrapper">
+    <mat-card class="form-card">
+      <mat-card-header class="form-header">
+        <div class="header-content">
+          <mat-icon class="header-icon">local_hospital</mat-icon>
+          <mat-card-title>Ajouter une Ordonnance</mat-card-title>
+        </div>
+        <mat-card-subtitle>Veuillez remplir les détails de l'ordonnance ci-dessous.</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="ordenance-form">
+          <mat-form-field appearance="fill" class="animated-field" [@inputHighlight]="focused ? 'focused' : 'unfocused'">
+            <mat-label>Titre de l'ordonnance</mat-label>
+            <input matInput placeholder="Titre" [(ngModel)]="ordenance.titre" name="titre" (focus)="focused = true" (blur)="focused = false">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="animated-field" [@inputHighlight]="focused ? 'focused' : 'unfocused'">
+            <mat-label>Instructions</mat-label>
+            <textarea matInput placeholder="Instructions détaillées" [(ngModel)]="ordenance.instructions" name="instructions" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" (focus)="focused = true" (blur)="focused = false"></textarea>
+          </mat-form-field>
+  
+          <div class="triple-fields">
+            <mat-form-field appearance="fill" [@inputHighlight]="focused ? 'focused' : 'unfocused'">
+              <mat-label>Dosage (mg)</mat-label>
+              <input matInput type="number" placeholder="Dosage" [(ngModel)]="ordenance.dosage" name="dosage" (focus)="focused = true" (blur)="focused = false">
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill" [@inputHighlight]="focused ? 'focused' : 'unfocused'">
+              <mat-label>Fréquence (par jour)</mat-label>
+              <input matInput type="number" placeholder="Fréquence" [(ngModel)]="ordenance.frequence" name="frequence" (focus)="focused = true" (blur)="focused = false">
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill" [@inputHighlight]="focused ? 'focused' : 'unfocused'">
+              <mat-label>Durée (jours)</mat-label>
+              <input matInput type="number" placeholder="Durée" [(ngModel)]="ordenance.duree" name="duree" (focus)="focused = true" (blur)="focused = false">
+            </mat-form-field>
+            <mat-form-field appearance="fill" [@inputHighlight]="focused ? 'focused' : 'unfocused'">
+                <mat-label>Patient</mat-label>
+                <mat-select [(value)]="selectedPatientId" (focus)="focused = true" (blur)="focused = false">
+                   <mat-option *ngFor="let patient of patients" [value]="patient.idpatient">
+                     {{patient.nom}} {{patient.prenom}}
+                   </mat-option>
+                </mat-select>
+               </mat-form-field>
+          </div>
+
+
+          <!-- <div class="form-group">
+            <label>Medicament</label>
+            <div class="form-check" *ngFor="let medicament of medicaments">
+              <mat-checkbox class="example-margin" [checked]="ordenance.medicamentsIds.includes(medicament)" (click)="controleIngredient(medicament)">
+                <input class="form-check-input" type="checkbox" [id]="medicament.id" (click)="addMaladieToIngredient(medicament)" [value]="medicament.idMedicament">
+                <label class="form-check-label" [for]="medicament.id">
+                  {{ medicament.nom }}
+                </label>
+              </mat-checkbox>
+            </div>
+          </div> -->
+          
+<!-- medical-prescription.component.html -->
+<!-- medical-prescription.component.html -->
+<div>
+  <h2>Liste des médicaments</h2>
+  <ul>
+    <li *ngFor="let medicament of allMedicaments">
+      <input type="checkbox" [value]="medicament" (change)="toggleSelection($event, medicament)">
+      {{medicament.nomMed}}
+    </li>
+  </ul>
+  <h2>Médicaments sélectionnés</h2>
+  <ul>
+    <li *ngFor="let medicament of selectedMedicaments">
+      {{medicament.nomMed}}
+      <button (click)="removeMedicament(medicament)">Supprimer</button>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+          
+        </form>
+      </mat-card-content>
+      <mat-card-actions class="card-actions">
+        <button mat-raised-button color="primary" (click)="ajouterOrdenance()">Soumettre Ordonnance</button>
+        <button mat-raised-button color="warn" (click)="generatePDF()">Générer PDF</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

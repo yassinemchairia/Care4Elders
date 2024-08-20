@@ -1,0 +1,29 @@
+<div class="templatemo-content-container">
+    <button class="btn btn-success mb-3" (click)="buttonAjouter()">Ajouter Morgue</button>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Morgues</div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Etablissement</th>
+                        <th>Nbr Cadavre</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of morgues">
+                        <td>{{ item.etablissement.nomEtab }}</td>
+                        <td>{{ item.nbCadavre }}</td>
+
+                        <td>
+                            <button (click)="buttonModifier(item.idMorgue)" class="btn btn-info">Edit</button>
+                            <button (click)="delete(item.idMorgue)" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

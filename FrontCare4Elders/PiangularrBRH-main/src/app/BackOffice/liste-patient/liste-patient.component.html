@@ -1,0 +1,34 @@
+<div class="templatemo-content-container">
+   
+    <!-- <button class="btn btn-success mb-3" (click)="buttonAjouter()">Ajouter Etablissement</button> -->
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Patients</div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom Patient</th>
+                        <th>Prenom</th>
+                        <th>archiver</th>
+                        <th>Etat </th>
+
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listePatients">
+                        <td>{{ item.nom }}</td>
+                        <td>{{ item.prenom }}</td>
+                        <td>{{ item.archiver }}</td>
+                        <td>{{ item.typatient }}</td>
+                      
+                         <td>
+                            <button (click)="delete(item.idpatient)" class="btn btn-danger">Delete</button>
+                        </td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

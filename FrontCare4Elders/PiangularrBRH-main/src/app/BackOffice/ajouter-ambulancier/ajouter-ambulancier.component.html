@@ -1,0 +1,20 @@
+<div class="templatemo-content-container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Ajouter un Ambulancier</div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="nomEtab">nom</label>
+                    <input type="text" class="form-control" [(ngModel)]="ambulancier.nom" [ngModelOptions]="{standalone: true}" placeholder="Nom">
+                    <label for="nomEtab">prenom</label>
+                    <input type="text" class="form-control" [(ngModel)]="ambulancier.prenom" [ngModelOptions]="{standalone: true}" placeholder="PreNom">
+                    <label for="nomEtab">mail</label>
+                    <input type="mail" class="form-control" [(ngModel)]="ambulancier.mail" [ngModelOptions]="{standalone: true}" placeholder="Mail">
+                </div>
+            
+                <button type="submit" class="btn btn-primary" (click)="ajouterAmbulancier()">Ajouter</button>
+            </form>
+        </div>
+    </div>
+  </div>
+  

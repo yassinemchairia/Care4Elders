@@ -1,0 +1,48 @@
+
+  
+<section class="get-in-touch">
+   <h1 class="title">Organiser une activité</h1>
+   <form class="contact-form row" (ngSubmit)="ajouterActivite()" #congeForm="ngForm">
+      <div class="form-field col-lg-6">
+        <label class="label" for="description">Nom Activite :</label>
+         <input id="description" class="input-text js-input" type="text" name="description" [(ngModel)]="activity.nomActivity" required>
+         
+      </div>
+       <div class="form-field col-lg-6">
+        <label class="label" for="dateDebut">Date de début :</label>
+        <input id="dateDebut" class="input-text js-input" type="date" name="dateDebut" [(ngModel)]="activity.dateActivity" required>
+         
+      </div> 
+      
+
+      
+      <div class="form-field col-lg-6">
+        <label class="label" for="typeCounger">Type d'activité :</label>
+         <select id="typeActivity" class="input-text js-input" name="typeActivity" [(ngModel)]="activity.typeActivity" required>
+            <option value="ONLINE_FITNESS">Online fitness</option>
+            <option value="VIRTUAL_YOGA">Virtual yoga</option>
+            <option value="GUIDED_MEDITATION">Guided meditation</option>
+            <option value="VIRTUAL_COOKING">Virtual cooking</option>
+            <option value="CONTINUING_EDUCATION">Contiuining education</option>
+            <option value="VIRTUAL_BOOK_CLUB">virtual book club</option>
+            <option value="ONLINE_GAMES">Online Games</option>
+         </select>
+      </div>
+      <div class="form-field col-lg-6">
+         <label class="label" for="image">Image</label>
+         <input type="file" class="form-control" (change)="onFileSelected($event)">
+       </div>
+      <div class="form-field col-lg-12">
+        <button class="submit-btn" type="submit">Ajouter</button>
+        </div>
+        <div class="form-field col-lg-12">
+            <!-- Ajoutez une classe 'btn-margin' pour définir une marge -->
+        <button type="submit" class="submit-btn btn btn-primary btn-margin" [routerLink]="['/listOrgaActivities']">Retour</button>
+    </div>
+   </form>
+</section>
+<ng-toast [style]="{width:'300px'}"></ng-toast>
+
+
+
+

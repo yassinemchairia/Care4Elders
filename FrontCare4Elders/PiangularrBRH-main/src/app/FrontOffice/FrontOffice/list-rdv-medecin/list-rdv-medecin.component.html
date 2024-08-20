@@ -1,0 +1,33 @@
+<div class="container">
+  <button type="button" class="btn btn-success" (click)="downloadExcel(this.medecin_Connecter.idMedecin, 'rdv_medecin_1_mars.xlsx')">Export to Excel</button>
+  <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let rdv of ListRdvs">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h5 class="card-title">Appointment Date: {{ rdv.dateRDV | date:'short' }}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">  {{rdv.patient.nom }}   {{rdv.patient.prenom }}  </p>
+            <p class="card-text">  {{rdv.patient.typatient }}  </p>
+
+            <p class="card-text">
+                Archived :
+            <span [ngClass]="{ 'text-success': rdv.archiver, 'text-danger': !rdv.archiver }" style="font-size: 1.2em; font-weight: bold;">
+              {{ rdv.archiver ? 'Yes' : 'No' }}
+            </span>
+              </p>
+          </div>
+          <button type="button" class="btn btn-primary" [routerLink]="'/UpdateRdvPatient/' + rdv.idRDV"  >Update</button>
+          <button type="button" class="btn btn-danger" (click)="printPdf(rdv.patient.idpatient)">Print PDF</button>
+        
+
+ <button *ngIf="rdv.patient.typatient === 'URGENT' && !rdv.isAssignedToAmbulance" type="button" class="btn btn-warning"
+ (click)="assignToAmbulance(rdv.patient.idpatient, rdv)">Assigner au Ambulance</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  

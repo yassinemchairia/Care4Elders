@@ -1,0 +1,29 @@
+<div class="templatemo-content-container">
+    <!-- Ajout d'une classe 'mb-3' pour un espacement inférieur -->
+    <div class="mb-3">
+        <!-- Ajout d'une classe 'table-responsive' pour une meilleure visibilité sur les petits écrans -->
+        <div class="table-responsive">
+            <table class="table table-striped"> <!-- Ajout de 'table-striped' pour des lignes alternées -->
+                <thead class="thead-dark"> <!-- Utilisation de 'thead-dark' pour un en-tête sombre -->
+                    <tr>
+                        <th>Type de Repas</th>
+                        <th>Date du Repas</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of repas">
+                        <td>{{ item.typeRepas }}</td>
+                        <td>{{ item.dateRepas }}</td>
+                        <td>
+                            <!-- Ajout d'une icône pour la suppression -->
+                            <button (click)="delete(item.id)" class="btn btn-danger">
+                                <i class="fa fa-trash"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="templatemo-content-container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Ajouter et Affecter une Ambulance</div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="marque">Marque</label>
+                    <input type="text" class="form-control" [(ngModel)]="ambulance.marque" [ngModelOptions]="{standalone: true}" placeholder="Marque">
+                </div>
+                <div class="form-group">
+                    <label for="matricule">Matricule</label>
+                    <input type="text" class="form-control" [(ngModel)]="ambulance.matricule" [ngModelOptions]="{standalone: true}" placeholder="Matricule">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" (change)="onFileSelected($event)">
+                  </div>
+                <div class="form-group">
+                    <label for="etatAmb">État de l'ambulance</label>
+                    <select class="form-control" [(ngModel)]="ambulance.etatAmb" [ngModelOptions]="{standalone: true}">
+                        <option value="" disabled selected>État de l'ambulance</option>
+                        <option value="FONCTIONNELLE">Fonctionnelle</option>
+                        <option value="PANNE">Panne</option>
+                        <option value="MAINTENANCE">Maintenance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="busy">Disponibilité</label>
+                    <select class="form-control" [(ngModel)]="ambulance.busy" [ngModelOptions]="{standalone: true}">
+                        <option value="true">Occupé</option>
+                        <option value="false">Disponible</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateDernEntret">Date Dernier Entretien</label>
+                    <input type="date" class="form-control" [(ngModel)]="ambulance.dateDernEntret" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="etablissement">Établissement</label>
+                    <select class="form-control" [(ngModel)]="etablissement.idEtab" [ngModelOptions]="{standalone: true}">
+                        <option [ngValue]="etablissement.idEtab" disabled selected>Sélectionner un établissement</option>
+                        <option *ngFor="let etab of etablissements" [ngValue]="etab.idEtab">{{ etab.nomEtab }}</option>
+                    </select>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="ambulancier">Nom Ambulancier</label>
+                    <input type="text" class="form-control" [(ngModel)]="ambulancier.nom" [ngModelOptions]="{standalone: true}" placeholder="Nom Ambulancier">
+                    <label for="ambulancier">Prenom Ambulancier</label>
+                    <input type="text" class="form-control" [(ngModel)]="ambulancier.prenom" [ngModelOptions]="{standalone: true}" placeholder="Prenom Ambulancier">
+                    <label for="ambulancier">Mail Ambulancier</label>
+                    <input type="email" class="form-control" [(ngModel)]="ambulancier.mail" [ngModelOptions]="{standalone: true}" placeholder="Mail Ambulancier">
+                </div>              
+                          
+                <button type="submit" class="btn btn-primary" (click)="ajouterEtAffecterAmbulance()">Ajouter et Affecter</button>
+            </form>
+        </div>
+    </div>
+</div>

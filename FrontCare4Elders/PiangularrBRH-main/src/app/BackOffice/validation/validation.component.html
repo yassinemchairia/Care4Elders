@@ -1,0 +1,60 @@
+<div *ngIf="commandesEnAttente.length > 0">
+    <h2>Commandes en attente</h2>
+    <table class="commandes-table">
+        <thead>
+            <tr>
+               
+                <th>Montant total</th>
+                <th>Date de commande</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let commande of commandesEnAttente; let i = index">
+                <tr [ngClass]="{'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0}">
+                    
+                    <td>{{ commande.montantTotal }}</td>
+                    <td>{{ commande.date_commande }}</td>
+                    <td>
+                        <button class="valider-button" (click)="validerCommande(commande?.idCommande)">Valider commande</button>
+                    </td>
+                </tr>
+                <tr class="separator-row">
+                    <td colspan="3"></td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+    <div *ngIf="displayValidationMessage" class="validation-message">
+        <p>{{ validationMessage }}</p>
+    </div>
+</div>
+<div *ngIf="commandesEnAttente.length === 0">
+    <p>Aucune commande en attente.</p>
+</div>
+<div *ngIf="utilisateurAvecPlusDeCommandes" class="user-details-container">
+    <h2>Détails de l'utilisateur avec le plus de commandes</h2>
+    <p>Nom : {{ utilisateurAvecPlusDeCommandes.firstname }}</p>
+    <p>Nom : {{ utilisateurAvecPlusDeCommandes.lastname }}</p>
+    <p>Email : {{ utilisateurAvecPlusDeCommandes.email }}</p>
+    <p>Nombre de commandes : {{ commandesUtilisateur }}</p>
+    <!-- Ajoutez d'autres détails de l'utilisateur ici -->
+  </div>
+  <div *ngIf="!utilisateurAvecPlusDeCommandes" class="user-details-container hidden">
+    <p>Aucun utilisateur avec le plus de commandes n'est disponible pour le moment.</p>
+  </div>
+<div class="col-md-6">
+    <div class="resultat-produit-le-plus-commande">
+      <div *ngIf="produitLePlusRentable">
+        <h2>Produit le plus rentable</h2>
+         <!-- Ajoutez ici le code HTML pour afficher les détails du produit le plus rentable -->
+        <img [src]="produitLePlusRentable.image" alt="Image du produit" class="produit-image">
+         <p>Nom: {{ produitLePlusRentable.nomproduit }}</p>
+        <p>Description: {{ produitLePlusRentable.description }}</p>
+        <p>Prix: {{ produitLePlusRentable.prix }}TND</p>
+    <!-- ... -->
+      </div>
+    </div>
+</div>
+
+  

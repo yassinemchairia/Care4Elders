@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <div class="card mt-5">
+        <div class="card-header">
+          Statistiques des commandes
+        </div>
+        <div class="card-body">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" (click)="onShowByMonth()">Par Mois</button>
+            <button type="button" class="btn btn-primary" (click)="onShowByYear()">Par Année</button>
+          </div>
+          <div *ngIf="!isByMonthSelected" class="mt-3">
+            <input type="number" class="form-control" [(ngModel)]="selectedYear" placeholder="Année">
+            <button class="btn btn-success mt-2" (click)="onYearInput()">Entrer</button>
+          </div>
+          <canvas id="myChart" style="height: 400px;"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

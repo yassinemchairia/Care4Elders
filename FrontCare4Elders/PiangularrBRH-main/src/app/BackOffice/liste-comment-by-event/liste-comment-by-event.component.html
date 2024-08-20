@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-lg"> <!-- Ajout de la classe table-lg pour augmenter la taille du tableau -->
+                <thead>
+                    <tr>
+                        <th>firstname USER</th>
+                        <th>lastname USER</th>
+                        <th>Contenu </th>
+                        <th>date</th>
+                        <th>action</th>
+                       
+               
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let commentaire of commentaires">
+                        <td>{{ commentaire.user.firstname }}</td>
+                        <td>{{ commentaire.user.lastname }}</td>     
+                        <td>{{ commentaire.contenu }}</td>
+                        <td>{{ commentaire.date | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+                        <td>
+                        <button (click)="delete(commentaire.id)" class="btn btn-danger">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>

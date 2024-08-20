@@ -1,0 +1,88 @@
+ 
+     <!-- Left column -->
+    
+     <div class="templatemo-sidebar">
+      <header class="templatemo-site-header">
+        <div class="square"></div>
+        <h1>Care4Ealders</h1>
+      </header>
+      <div class="profile-photo-container">
+        <div class="profile-photo-overlay"></div>
+      </div>      
+      <!-- Search box -->
+      <form class="templatemo-search-form" role="search">
+        <div class="input-group">
+            <button type="submit" class="fa fa-search"></button>
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search" name="srch-term" id="srch-term">           
+        </div>
+      </form>
+      <div class="mobile-menu-icon">
+        
+          <i class="fa fa-bars"></i>
+      </div>
+      <nav class="templatemo-left-nav" >          
+        <ul>
+
+          <li><a   routerLink="/admin/listePlats"><i class="fa fa-bar-chart fa-fw"></i> Plats</a></li>
+          <li><a   routerLink="/admin/presenceCalender"><i class="fa fa-bar-chart fa-fw"></i>Presence Cuisinier</a></li>
+          <li><a   routerLink="/admin/Top3Med"><i class="fa fa-bar-chart fa-fw"></i>Medicament Plus Consommé </a></li>
+
+          <li><a   routerLink="/admin/statBadge"><i class="fa fa-bar-chart fa-fw"></i>Statestique Badge</a></li>
+          <li><a   routerLink="/admin/Listerestos"><i class="fa fa-bar-chart fa-fw"></i> Restaurants</a></li>
+          <li><a   routerLink="/admin/listeIngredients"><i class="fa fa-bar-chart fa-fw"></i> Ingredients</a></li>
+          <li><a   routerLink="/admin/listeRepas"><i class="fa fa-bar-chart fa-fw"></i> Repas</a></li>
+          <li><a   routerLink="/admin/listecounge"><i class="fa fa-bar-chart fa-fw"></i> Counges</a></li>
+
+
+          <li><a   routerLink="/admin/listeEvennement"><i class="fa fa-home fa-fw"></i>evennement</a></li>
+          <li><a   routerLink="/admin/StatEvent"><i class="fa fa-bar-chart fa-fw"></i>nombre participations</a></li>
+          <li><a   routerLink="/admin/StatAverage"><i class="fa fa-bar-chart fa-fw"></i>Statistique moyenne </a></li>
+          
+          
+          <li><a   routerLink="/admin/l"><i class="fa fa-home fa-fw"></i>CHarts</a></li>
+            <li><a   routerLink="/admin/l1"><i class="fa fa-home fa-fw"></i>Staistique</a></li>
+            <li><a   routerLink="/admin/s"><i class="fa fa-home fa-fw"></i>Commande</a></li>
+            <li><a   routerLink="/admin/listProduit"><i class="fa fa-home fa-fw"></i>Produit</a></li>
+          <li><a  routerLink="/admin/listeEtablissement"><i class="fa fa-database fa-fw"></i>Etablissement</a></li>
+          <li><a  routerLink="/admin/listAmbulance"><i class="fa fa-database fa-fw"></i>Ambulance</a></li>
+          <li><a  routerLink="/admin/listeAmbulancier"><i class="fa fa-database fa-fw"></i>Ambulancier</a></li>
+          <li><a  routerLink="/admin/listeMedecin"><i class="fa fa-database fa-fw"></i>Medecins</a></li>
+          <li><a  routerLink="/admin/listeInfermier"><i class="fa fa-database fa-fw"></i>Infermiers</a></li>
+          <li><a  routerLink="/admin/listeRdvs"><i class="fa fa-database fa-fw"></i>Rendez-Vous</a></li>
+          <li><a  routerLink="/admin/listePatients"><i class="fa fa-database fa-fw"></i>Patients</a></li>
+          <li><a  routerLink="/admin/listePatientAmbulance"><i class="fa fa-database fa-fw"></i>Patients Sur Route</a></li>
+          <li><a  routerLink="/admin/listeDeath"><i class="fa fa-database fa-fw"></i>Patients Decedés</a></li>
+          <li><a  routerLink="/admin/listeMorgue"><i class="fa fa-database fa-fw"></i>Morgue</a></li>
+          <li><a  routerLink="/admin/brhstats"><i class="fa fa-database fa-fw"></i>top 3 Medecins </a></li>
+          <li><a  routerLink="/admin/StatsGenreBrh"><i class="fa fa-database fa-fw"></i>Patients Dand Etablissement</a></li>
+          <li><a   routerLink="/admin/listProduit"><i class="fa fa-home fa-fw"></i>Produit</a></li>
+          <li><a   routerLink="/admin/alertchrts"><i class="fa fa-bar-chart fa-fw"></i>charts top medcin</a></li>
+          <li><a   routerLink="/admin/AletMed"><i class="fa fa-bar-chart fa-fw"></i>Top medecin</a></li>
+
+
+
+          <!-- <li><a   routerLink="/admin/listePlats"><i class="fa fa-bar-chart fa-fw"></i>Afficher plat</a></li>
+          <li><a   routerLink="/admin/Listerestos"><i class="fa fa-bar-chart fa-fw"></i>Afficher Restos</a></li>
+          <li><a   routerLink="/admin/listeIngredients"><i class="fa fa-bar-chart fa-fw"></i>Afficher Ingredients</a></li>
+          <li><a   routerLink="/admin/listeRepas"><i class="fa fa-bar-chart fa-fw"></i>Afficher Repas</a></li>
+          <li><a   routerLink="/admin/listeMaladies"><i class="fa fa-bar-chart fa-fw"></i>Afficher Maladie</a></li>
+          <li><a   routerLink="/admin/listecounge"><i class="fa fa-bar-chart fa-fw"></i>Afficher Counge</a></li> -->
+ 
+          <li><a   routerLink="/admin/listShelter"><i class="fa fa-bar-chart fa-fw"></i>Afficher sheletr</a></li>
+          <li><a   routerLink="/admin/listAide"><i class="fa fa-bar-chart fa-fw"></i>Afficher aide</a></li>
+          <li><a   routerLink="/admin/listService"><i class="fa fa-bar-chart fa-fw"></i>Afficher service</a></li>
+          <li><a   routerLink="/admin/listDonateurAide"><i class="fa fa-bar-chart fa-fw"></i>Afficher Donateur</a></li>
+          <li><a   routerLink="/admin/listCause"><i class="fa fa-bar-chart fa-fw"></i>Afficher Cause</a></li>
+
+          <li><a   routerLink="/admin/stats"><i class="fa fa-bar-chart fa-fw"></i>statestique</a></li>
+          <li><a href="maps.html"><i class="fa fa-map-marker fa-fw"></i>Maps</a></li>
+          <li><a href="manage-users.html"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
+          <li><a href="preferences.html"><i class="fa fa-sliders fa-fw"></i>Preferences</a></li>
+          <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+          <a *ngIf="isloged()"  class="btn custom-btn custom-border-btn smoothscroll" (click)="logout()" >LOG-OUT</a>
+        </ul>  
+      </nav>
+    </div>
+   
+  
+  

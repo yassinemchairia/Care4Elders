@@ -1,0 +1,22 @@
+<div class="templatemo-content-container">
+    <div class="panel panel-default">
+      <div class="panel-heading">Modifier une Ambulance</div>
+      <div class="panel-body">
+        <form>
+
+
+          <div class="form-group">
+            <label for="ambilancier">Ambulancier</label>
+            <select class="form-control" [(ngModel)]="selectedAmbulancier" [ngModelOptions]="{standalone: true}" (ngModelChange)="onSelectAmbulancier(selectedAmbulancier)">
+              <option [ngValue]="ambulance.ambilancier?.idAmbilancier" disabled selected>Sélectionner un Ambulancier</option>
+              <option *ngFor="let chauff of listambulanciers" [ngValue]="{ id: chauff.idAmbilancier, nom: chauff.nom }">{{ chauff.nom }}</option>
+            </select>
+          </div>
+  
+
+          <button type="button" class="btn btn-primary" (click)="dessafecterAmbulancier()">Enregistrer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

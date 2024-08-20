@@ -1,0 +1,60 @@
+<div class="templatemo-content-container">
+    <div class="templatemo-content-container">
+      <div class="col-md-6 mb-3">
+        <a class="green-button" [routerLink]="['/favorite']">Voir les favoris</a> 
+      </div>
+     <div> <a class="green-button" [routerLink]="['/listPatientActivities']">Voir Votre Activités</a>
+     </div>
+      <div class="row">
+        <div *ngFor="let activity of activities" class="col-md-4 mb-4">
+          <div class="custom-block-wrap">
+            <div class="custom-block">
+              <!-- Affichage du nom de l'activité en majuscules et plus grand -->
+              <h5 class="card-title mb-3 text-uppercase text-center custom-title">{{ activity.nomActivity }}</h5>
+              <!-- Affichage de l'image de l'activité -->
+              <img [src]="activity.image" class="card-img-top custom-block-image img-fluid" alt="{{ activity.nomActivity }}">
+              <div class="custom-block-body">
+                <!-- Détails supplémentaires de l'activité -->
+                <p class="card-text"><strong>Date:</strong> {{ activity.dateActivity | date }}</p>
+                <p class="card-text"><strong>Type:</strong> {{ activity.typeActivity }}</p>
+                <p class="card-text"><strong>Likes:</strong> {{ activity.likeActivity }}</p>
+                <p class="card-text"><strong>Dislikes:</strong> {{ activity.dislikeActivity }}</p>
+              </div>
+              <!-- <div class="card-footer"> -->
+                <!-- Ajoutez des boutons d'action si nécessaire -->
+                <!-- <button class="btn btn-danger" (click)="openDetailsModal(activity.idActivity)">Voir plus</button> -->
+                <!-- <button class="btn btn-primary ml-2" (click)="affecter(activity.idActivity)">Affecter</button> -->
+              <!-- </div> -->
+              <div class="card-footer">
+                  <!-- Afficher le coeur plein si l'activité est dans les favoris -->
+              <!-- <button class="btn btn-primary" (click)="isFavorite(activity.idActivity) ? removeFromFavorites(activity.idActivity) : addToFavorites(activity.idActivity)">
+                <span *ngIf="isFavorite(activity.idActivity)" aria-hidden="true">&hearts;</span>
+                <span *ngIf="!isFavorite(activity.idActivity)" aria-hidden="true">&hearts;</span>
+              </button> -->
+              <!-- Bouton "Like" avec icône -->
+              <button class="btn" [ngClass]="{ 'green': isLiked(activity.idActivity) }" (click)="reactToActivity(activity.idActivity, 'LIKE')">
+                <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i>
+              </button>
+              <!-- Bouton "Dislike" avec icône -->
+              <button class="btn" [ngClass]="{ 'red': isDisliked(activity.idActivity) }" (click)="reactToActivity(activity.idActivity, 'DISLIKE')">
+                <i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i>
+              </button>
+              
+              <button class="btn btn-primary" (click)="toggleFavorite(activity)">
+                <span [ngClass]="{ 'favorite': isFavorite(activity.idActivity) }">&#9825;</span>
+              </button>
+                <button class="btn btn-primary" (click)="registerPatientToActivity(activity.idActivity)">Participer</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+
+  

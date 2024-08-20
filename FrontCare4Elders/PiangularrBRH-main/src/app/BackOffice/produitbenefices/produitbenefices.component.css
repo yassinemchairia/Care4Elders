@@ -1,0 +1,102 @@
+.produits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  .produit-card {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: calc(33.333% - 20px);
+  }
+  
+  .produit-card img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .produit-card h3 {
+    margin: 0 0 10px;
+  }
+  
+  .produit-card p {
+    margin: 0;
+  }
+  
+  .benefice-total {
+    background-color: #007bff;
+    border-radius: 5px;
+    color: #fff;
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+    width: 200px; /* Reduced width */
+  }
+  
+  .benefice-total h2 {
+    margin: 0;
+  }
+  .produit-card button {
+    background-color: #2be20f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .produit-card button:hover {
+    background-color: #00b30c;
+  }
+  .zero-benefice {
+    color: red; /* Couleur rouge pour les produits avec un bénéfice de zéro */
+  }
+  
+  .non-zero-benefice {
+    color: black; /* Couleur par défaut pour les produits avec un bénéfice différent de zéro */
+  }
+  .tri-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .tri-dropdown select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #11e7e4;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .tri-dropdown select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .tri-dropdown::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .tri-dropdown select:focus::after {
+    color: #007bff;
+  }

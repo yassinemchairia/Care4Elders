@@ -1,0 +1,10 @@
+#pdfContent {
+    background-color: white;
+    padding: 20px;
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+  }
+  

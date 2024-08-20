@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row">
+     
+       Welcome Doctor
+        <div class="col-lg-12">
+            <div class="card-deck">
+                <div class="card ord-card" *ngFor="let ord of ordonnances ">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ord.titre }}</h5>
+                        <p class="card-text">{{ ord.instructions }}</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Dosage: {{ ord.dosage }}</li>
+                            <li class="list-group-item">Fréquence: {{ ord.frequence }}</li>
+                            <li class="list-group-item">Durée: {{ ord.duree }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div *ngIf="prochainRdv"> -->
+    <!-- <p>Prochain rendez-vous : {{ prochainRdv | date:'medium' }}</p> -->
+    <!-- <p *ngIf="dureeEntreRdv !== undefined"> -->
+        <!-- <p> Durée entre les rendez-vous : {{ dureeEntreRdv }} minutes
+    </p> -->
+  <!-- </div> -->
+  

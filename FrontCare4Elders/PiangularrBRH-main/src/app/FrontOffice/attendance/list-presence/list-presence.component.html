@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div class="row">
+    
+        <div class="col-lg-12">
+            <div class="search-box">
+                <input type="text" class="form-control" placeholder="Rechercher..." [(ngModel)]="searchText">
+                <i class="fa fa-search search-icon"></i>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card-deck">
+                <div class="card ord-card" *ngFor="let ord of attendances | filter: searchText | paginate: { itemsPerPage: pageSize, currentPage: page }">
+
+                    <li class="list-group-item">Date de presence: {{ extractDate(ord.start) }}</li>
+                  
+                         
+                </div>
+            </div>
+            <pagination-controls class="pagination" (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

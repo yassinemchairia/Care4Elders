@@ -1,0 +1,42 @@
+<div class="templatemo-content-container">
+    <div class="panel panel-default">
+      <div class="panel-heading">Les Patients Sur La Route</div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>État</th>
+              <th>Ambulance Mat</th>
+              <th>Établissement</th>
+              <th>Médecin</th>
+              <th>Infirmier</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of listePatientAmb">
+              <td>{{ item.nom }} {{ item.prenom }}</td>
+              <td>{{ item.typatient }}</td>
+              <td>{{ item.ambulance.matricule }}</td>
+              <td>{{ item.ambulance.etablissement.nomEtab }}</td>
+              <td>
+                <select id="selectMedecin" class="form-control" [(ngModel)]="item.selectedMedecinId" (change)="onMedecinChange($event)">
+                  <option *ngFor="let medecin of medecins" [value]="medecin.idMedecin">{{ medecin.nom }}</option>
+                </select>
+              </td>
+              <td>
+                <select id="selectInfirmier" class="form-control" [(ngModel)]="item.selectedInfirmierId" (change)="onInfirmierChange($event)">
+                  <option *ngFor="let infirmier of infirmiers" [value]="infirmier.idInfermier">{{ infirmier.nom }}</option>
+                </select>
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary" (click)="onSubmit(item.idpatient, item.ambulance.etablissement.idEtab)">Au Etablissement</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

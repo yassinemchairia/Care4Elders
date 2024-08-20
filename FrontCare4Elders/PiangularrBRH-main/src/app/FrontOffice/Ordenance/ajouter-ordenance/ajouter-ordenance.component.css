@@ -1,0 +1,51 @@
+/* ajouter-ordenance.component.css */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+  }
+  
+  .form-card {
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+  
+  .form-header {
+    background-color: #e1f5fe;
+    color: #0277bd;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header-icon {
+    font-size: 40px;
+  }
+  
+  .animated-field {
+    transition: all 0.3s ease-out;
+  }
+  
+  .animated-field:hover {
+    transform: translateY(-3px);
+  }
+  
+  .triple-fields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .card-actions {
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  

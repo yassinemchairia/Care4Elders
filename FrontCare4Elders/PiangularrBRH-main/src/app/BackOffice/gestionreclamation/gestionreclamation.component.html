@@ -1,0 +1,74 @@
+<h2>Liste des réclamations</h2>
+<p>Total des réclamations non répondues pendant deux jours : {{ totalReclamationsNonRepondues }}</p>
+<div class="filter-section">
+  <button (click)="showReclamationsNonRepondues()" class="toggle-button">
+    Afficher les réclamations non répondues
+  </button>
+
+  <select [(ngModel)]="selectedType" (ngModelChange)="onChangeType()" class="type-selector">
+    <option value="">Tous les types</option>
+    <option *ngFor="let type of typesReclamation" [value]="type">{{ type }}</option>
+  </select>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th class="col-description">Description</th>
+            <th class="col-date">Date de création</th>
+            <th class="col-type">Type de réclamation</th>
+            <th class="col-type">Etat</th>
+            <th class="col-type">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reclamation of reclamations" [ngClass]="{
+          '.importance-tt': reclamation.importance >= 4.0,
+          'importance-purple': reclamation.importance < 4.0 && reclamation.importance > 2.0,
+          'importance-yellow': reclamation.importance <= 2.0,
+      'black-text': true 
+        }">
+            <td>{{ reclamation.description }}</td>
+            <td>{{ reclamation.dateCreation }}</td>
+            <td>{{ reclamation.typeReclamation }}</td>
+            <td>
+                <ng-container *ngIf="reclamation.resolue; else nonTraite">
+                  Résolue
+                </ng-container>
+                <ng-template #nonTraite>
+                  Non traitée
+                </ng-template>
+              </td>
+              <td>
+                <button *ngIf="!reclamation.resolue" class="repondre-button" (click)="onRepondre(reclamation.idReclamation)">Répondre</button>
+              </td>
+        </tr>
+        
+    </tbody>
+</table>
+<h2>Top 2 users with most important reclamations</h2>
+<ul class="top-users">
+  <li class="top-user-item" *ngFor="let user of topUsers">
+    <span class="property-name">NOM:</span> {{ user.firstname }}
+    <span class="property-name">PRENOM:</span> {{ user.lastname }}
+    <span class="property-name">NombreReclamationsImportant:</span> ({{ user.nombreReclamationsImportant }})
+  </li>
+</ul>
+<div class="importance-indicators">
+  <div class="importance-indicator importance-tt">
+    <div class="circle tt"></div>
+    <span>Importance 4 et +</span>
+  </div>
+  <div class="importance-indicator importance-purple">
+    <div class="circle purple"></div>
+    <span>Importance entre 2 et 4</span>
+  </div>
+  <div class="importance-indicator importance-yellow">
+    <div class="circle yellow"></div>
+    <span>Importance inférieure à 2</span>
+  </div>
+</div>
+<!-- Votre code existant pour le tableau -->
+
+<!-- Section pour les carrés de couleur avec indications d'importance -->
+

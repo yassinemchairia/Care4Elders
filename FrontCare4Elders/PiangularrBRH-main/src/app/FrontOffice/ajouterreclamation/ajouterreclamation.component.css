@@ -1,0 +1,93 @@
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    border: 1px solid #060303;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .styled-table th {
+    background-color: #1fcfcf;
+    font-weight: bold;
+  }
+  
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #fbfbfb;
+  }
+  
+  .styled-table tbody tr:hover {
+    background-color: #19c8cb;
+  }
+  
+  .styled-table td.no-response {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+  }
+  /* Styles pour le formulaire */
+  form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+  }
+  
+  form input[type="text"],
+  form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styles pour les messages d'erreur */
+  .success-message, .error-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .success-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+  }
+  
+  .error-message {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+  }
+  
+  

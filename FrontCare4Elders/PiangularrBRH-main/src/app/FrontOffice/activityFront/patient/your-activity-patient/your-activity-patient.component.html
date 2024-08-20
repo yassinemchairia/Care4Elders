@@ -1,0 +1,29 @@
+<div class="row">
+    <div *ngFor="let activity of activities" class="col-md-4 mb-4">
+      <div class="custom-block-wrap">
+        <div class="custom-block">
+          <h5 class="card-title mb-3 text-uppercase text-center custom-title red-text">{{ activity.nomActivity }}</h5>
+          <div class="card-img-container">
+            <img [src]="activity.image" class="card-img-top custom-block-image img-fluid" alt="{{ activity.nomActivity }}">
+          </div>
+          <div class="custom-block-body">
+            <p class="card-text"><strong>Date:</strong> {{ activity.dateActivity | date }}</p>
+            <p class="card-text"><strong>Type:</strong> {{ activity.typeActivity }}</p>
+            <p class="card-text"><strong>Likes:</strong> {{ activity.likeActivity }}</p>
+            <p class="card-text"><strong>Dislikes:</strong> {{ activity.dislikeActivity }}</p>
+          </div>
+          <div class="card-footer">
+            <!-- Ajoutez ici des boutons pour interagir avec l'activité -->
+            <!-- Exemple de bouton pour participer à l'activité -->
+            <!-- <button class="btn btn-primary" (click)="registerPatientToActivity(activity.idActivity)">Participer</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="activities.length === 0" class="alert alert-info mt-3">Aucune activité trouvée pour ce patient.</div>
+
+  <div class="mt-3">
+    <button class="return-button" [routerLink]="['/listActivitePatient']">Retour</button>
+  </div>

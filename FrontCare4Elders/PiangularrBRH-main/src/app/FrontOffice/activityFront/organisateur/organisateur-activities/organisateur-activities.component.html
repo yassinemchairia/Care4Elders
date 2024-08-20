@@ -1,0 +1,51 @@
+<div class="centered-container">
+    <div class="badge">
+      <div class="badge__label">{{ orga.typeBadge }}</div>
+    </div>
+  </div>
+  <div style="margin-top: 20px;">
+    <button class="add-button" routerLink="/addActivity">Ajouter une activité</button>
+  </div>
+  <div style="margin-top: 20px;">
+    <label for="stateFilter">Filtrer par état :</label>
+    <select id="stateFilter" [(ngModel)]="selectedState" (change)="filterActivitiesByState()">
+      <option value="Tous">Tous</option>
+      <option value="ACCEPTE">Accepté</option>
+      <option value="EN_ATTENTE">En attente</option>
+      <option value="REFUSE">Refusé</option>
+    </select>
+  </div>
+  
+  <div style="margin-top: 20px;">
+    <div *ngIf="filteredActivities.length > 0">
+      <h2>Votre Activités ({{ selectedState }})</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nom de l'activité</th>
+            <th>Date de l'activité</th>
+            <th>Performance</th>
+            <th>Type d'activité</th>
+            <th>État</th>
+            <th>Likes</th>
+            <th>Dislikes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let activity of filteredActivities">
+            <td>{{ activity.nomActivity }}</td>
+            <td>{{ activity.dateActivity }}</td>
+            <td>{{ activity.perfermance }}</td>
+            <td>{{ activity.typeActivity }}</td>
+            <td>{{ activity.etat }}</td>
+            <td>{{ activity.likeActivity }}</td>
+            <td>{{ activity.dislikeActivity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div *ngIf="filteredActivities.length === 0" style="margin-top: 20px;">
+      <p>Aucune activité trouvée pour cet organisateur avec l'état "{{ selectedState }}".</p>
+    </div>
+  </div>

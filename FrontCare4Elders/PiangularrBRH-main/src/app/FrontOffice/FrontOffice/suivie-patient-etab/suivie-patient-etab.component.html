@@ -1,0 +1,26 @@
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom Patient</th>
+                        <th>Prenom</th>
+                        <th>Etat</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listePatients">
+                        <td>{{ item.nom }}</td>
+                        <td>{{ item.prenom }}</td>
+                        <td>{{ item.typatient }}</td>
+                        <td><button type="button" class="btn btn-primary"(click)="MoveToUpdate(item)" [routerLink]="'/UpdatePatInEtab/'+item.idpatient ">Modifier </button>
+                        </td>
+
+                      
+                       
+                    </tr>
+                </tbody>
+            </table>
+        
+    
+

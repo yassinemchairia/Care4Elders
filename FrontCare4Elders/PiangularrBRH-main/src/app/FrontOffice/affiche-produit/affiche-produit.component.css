@@ -1,0 +1,302 @@
+/* affiche-produit.component.css */
+
+.produit-container {
+  display: flex;
+  justify-content: space-around; /* Pour aligner les éléments avec un espacement égal */
+  flex-wrap: wrap; /* Permettre à la grille de s'enrouler sur plusieurs lignes */
+}
+
+.produit-grid {
+  display: flex;
+  flex-wrap: wrap; /* Permettre à la grille de s'enrouler sur plusieurs lignes */
+  justify-content: space-around; /* Pour aligner les éléments avec un espacement égal */
+}
+
+.produit-card {
+  width: 250px; /* Largeur fixe de chaque carte produit */
+  margin: 20px; /* Marge entre chaque carte produit */
+}
+
+/* Ajoutez d'autres styles selon vos besoins */
+
+
+.produit-details {
+  padding: 10px;
+}
+
+.produit-title {
+  font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.produit-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.produit-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #21b300; 
+}
+
+.produit-add-button {
+  background-color: #0026ff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.produit-add-button:hover {
+  background-color: #0056b3;
+}
+.alert {
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.alert-success {
+  background-color: #037979; /* Couleur verte pour le message de succès */
+  color: #fff;
+}
+
+.alert-danger {
+  background-color: #dc3545; /* Couleur rouge pour le message d'erreur */
+  color: #fff;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #0026ff;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.pagination button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #08ffce;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #0063f7;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Styles pour le menu déroulant au survol */
+select:hover {
+  border-color: #007bff; /* Couleur de la bordure au survol */
+}
+
+/* Styles pour les options du menu déroulant */
+option {
+  background-color: #f9e506; /* Couleur de fond des options */
+  color: #51840e; /* Couleur du texte des options */
+}
+
+/* Styles pour les options du menu déroulant au survol */
+option:hover {
+  background-color: #00fff7; /* Couleur de fond des options au survol */
+  color: #c01d79; /* Couleur du texte des options au survol */
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.custom-select-container {
+  margin-left: auto;
+}
+
+.custom-select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+.produit-add-button {
+  background-color: #4CAF50; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.produit-add-button:hover {
+  background-color: #45a049; /* Couleur de fond au survol */
+}
+.favoris-button,
+.favoris-button-filled {
+background: none;
+border: none;
+cursor: pointer;
+}
+
+.heart-icon,
+.heart-icon-filled {
+width: 24px;
+height: 24px;
+fill: none;
+stroke: red;
+stroke-width: 2;
+}
+
+.heart-icon-filled {
+fill: red;
+}
+.alert {
+opacity: 0; /* Initialiser l'opacité à 0 */
+transition: opacity 0.5s ease-in-out; /* Ajouter une transition en douceur */
+}
+
+.alert-show {
+opacity: 1; /* Définir l'opacité à 1 pour afficher le message */
+}
+.total-products {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+/* Styliser l'entrée de recherche */
+.search-input {
+width: 300px; /* ajustez la largeur selon vos préférences */
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin: 0 auto; /* centre l'élément horizontalement */
+display: block; /* assurez-vous qu'il est affiché en tant que bloc pour appliquer la marge automatique */
+}
+
+/* Modifier les styles lorsque l'entrée de recherche est en focus */
+.search-input:focus {
+border-color: dodgerblue; /* changer la couleur de la bordure en focus */
+}
+/* Style pour l'image du produit */
+.produit-image {
+width: 100%; /* Assurez-vous que l'image prend toute la largeur de son conteneur */
+height: auto; /* Hauteur automatique pour maintenir le ratio d'aspect */
+border-radius: 5px; /* Ajoutez une bordure arrondie */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre légère */
+transition: transform 0.3s ease; /* Ajoutez une transition pour un effet de survol fluide */
+}
+
+/* Effet de survol sur l'image */
+.produit-image:hover {
+transform: scale(1.05); /* Légèrement agrandir l'image au survol */
+}
+
+/* Style pour le conteneur de la carte du produit */
+.produit-card {
+width: 300px; /* Augmentez la largeur de la carte pour mieux accommoder l'image */
+margin: 20px; /* Espacement entre les cartes */
+background-color: #f9f9f9; /* Couleur de fond pour améliorer la lisibilité */
+border-radius: 10px; /* Ajoutez une bordure arrondie à la carte */
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre légère */
+transition: transform 0.3s ease; /* Ajoutez une transition pour un effet de survol fluide */
+}
+
+/* Effet de survol sur la carte du produit */
+.produit-card:hover {
+transform: translateY(-5px); /* Légèrement soulever la carte au survol */
+}
+
+/* Style pour les détails du produit */
+.produit-details {
+padding: 20px; /* Espacement à l'intérieur de la carte */
+}
+
+/* Style pour le titre du produit */
+.produit-title {
+font-size: 20px; /* Taille de police du titre */
+font-weight: bold; /* Texte en gras */
+margin-bottom: 10px; /* Espacement en bas du titre */
+}
+
+/* Style pour la description du produit */
+.produit-description {
+font-size: 16px; /* Taille de police de la description */
+margin-bottom: 10px; /* Espacement en bas de la description */
+}
+
+/* Style pour le prix du produit */
+.produit-price {
+font-size: 18px; /* Taille de police du prix */
+font-weight: bold; /* Texte en gras */
+color: #21b300; /* Couleur du texte pour le prix */
+}
+.resultat-produit-le-plus-commande {
+background-color: #0be3ea;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin-top: 20px;
+}
+
+.resultat-produit-le-plus-commande h3 {
+font-size: 24px;
+font-weight: bold;
+margin-bottom: 10px;
+
+}
+
+.resultat-produit-le-plus-commande p {
+font-size: 16px;
+color: #060606;
+margin-bottom: 5px;
+}
+
+.resultat-produit-le-plus-commande .produit-image {
+width: 100%;
+border-radius: 5px;
+margin-bottom: 5px;
+}
+
+.resultat-produit-le-plus-commande .produit-image:hover {
+transform: scale(1.05);
+transition: transform 0.3s ease;
+}
+
+.resultat-produit-le-plus-commande .alert {
+margin-top: 10px;
+padding: 10px;
+border-radius: 5px;
+background-color: #d1e7dd;
+color: #28b463;
+display: none;
+}
+
+.resultat-produit-le-plus-commande .alert-show {
+display: block;
+}

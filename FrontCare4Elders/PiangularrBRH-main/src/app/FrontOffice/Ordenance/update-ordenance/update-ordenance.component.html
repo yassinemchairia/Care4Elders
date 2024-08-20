@@ -1,0 +1,45 @@
+<!-- update-ordenance.component.html -->
+<div class="form-container">
+    <mat-card class="form-card">
+      <mat-card-header>
+        <div class="header-content">
+          <mat-icon class="header-icon">edit</mat-icon>
+          <mat-card-title>Modifier Ordonnance</mat-card-title>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="ordenance-form">
+          <mat-form-field appearance="fill">
+            <mat-label>Titre de l'ordonnance</mat-label>
+            <input matInput [(ngModel)]="ord.titre" name="titre">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Instructions</mat-label>
+            <textarea matInput [(ngModel)]="ord.instructions" name="instructions" autosize minRows="2" maxRows="5"></textarea>
+          </mat-form-field>
+  
+          <div class="triple-fields">
+            <mat-form-field appearance="fill">
+              <mat-label>Dosage (mg)</mat-label>
+              <input matInput type="number" [(ngModel)]="ord.dosage" name="dosage">
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill">
+              <mat-label>Fréquence (par jour)</mat-label>
+              <input matInput type="number" [(ngModel)]="ord.frequence" name="frequence">
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill">
+              <mat-label>Durée (jours)</mat-label>
+              <input matInput type="number" [(ngModel)]="ord.duree" name="duree">
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions class="card-actions">
+        <button mat-raised-button color="primary" (click)="modifierEtablissement()">Enregistrer Modifications</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

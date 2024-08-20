@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <ng-toast [style]="{width:'300px'}"></ng-toast>
+      <!-- Carte pour afficher l'image de l'événement -->
+      <div class="card mb-3">
+        <img [src]="eventDetails.image" class="card-img-top" alt="Event Image">
+      </div>
+      <!-- Carte pour afficher les autres détails de l'événement -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ eventDetails.nomevennement }}</h5>
+          <p class="card-text">Date: {{ eventDetails.date | date: 'dd/MM/yyyy' }}</p>
+  
+          <p class="card-text">Description: {{ eventDetails.discription }}</p>
+          <p class="card-text">Localisation: {{ placeName }}</p>
+          <p class="card-text">Nombre de place disponible: {{ eventDetails.placeMax }}</p>
+          <p class="card-text">État: {{ eventDetails.etat }}</p>
+          <p class="card-text">Type: {{ eventDetails.type }}</p>
+          <!-- Bouton pour retourner à tous les événements -->
+          <div class="text-center">
+            <button routerLink="/afficherevennementfront" class="btn btn-primary mx-2">Retour</button>
+            <!-- Bouton pour participer à l'événement -->
+            <button (click)="participer()" class="btn btn-success mx-2">Participer</button>
+          </div>
+          <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+        </div>
+      </div>
+       <!-- Mettez les champs de commentaire et l'ajout de commentaire dans une seule carte -->
+  <div class="card mt-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="comment-input">
+                <textarea id="commentArea" class="form-control" placeholder="Ajouter un commentaire..."></textarea>
+                <div class="emoji-picker">😊</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-primary" (click)="ajouterCommantaire()">Ajouter un commentaire</button>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <div *ngIf="comments && comments.length > 0">
+            <div *ngFor="let comment of comments" class="card mb-3">
+              <div class="card-body">
+                <div class="comment">
+                  <!-- Avatar depuis Internet -->
+                  <div class="comment-avatar">
+                    <img src="https://fr.freepik.com/vecteurs-libre/homme-mafieux-mysterieux-fumant-cigarette_7074311.htm#fromView=search&page=1&position=3&uuid=ad7c1051-0d1b-4cf4-b9aa-08229d7b2158.png" alt="Avatar">
+                  </div>
+                  <!-- Contenu du commentaire -->
+                  <div class="d-flex justify-content-between align-items-center">
+                    <input *ngIf="comment.user;else notMyComment" type="text" [value]="comment.contenu" id="comment[{{comment.id}}]"> 
+                    <ng-template #notMyComment>
+                      <p class="card-text"> commentaire : {{ comment.contenu }}</p>
+                    </ng-template>
+                   
+                    <!-- Ajoutez d'autres informations de commentaire si nécessaire -->
+                    <div *ngIf="comment.user?.id === userId" class="d-flex justify-content-center gap-1">
+                      <!-- Bouton de modification -->
+          <button (click)="updateComment(comment)" class="btn btn-sm btn-outline-primary">Modifier</button>
+          <button (click)="deleteCommentaire(comment.id!)" class="btn btn-sm btn-outline-primary">Supprimer</button>
+
+          <!-- Bouton de suppression -->
+
+        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="!comments || comments.length === 0">
+            <p>Aucun commentaire trouvé pour cet événement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+    <div class="col-md-6">
+      <!-- Carte pour afficher la position de l'événement -->
+      <div class="card small-map"> <!-- Ajoutez la classe small-map ici -->
+        <div class="card-body">
+          <!-- Utilisation d'un marqueur pour afficher l'emplacement de l'événement -->
+          <app-map [mapCenter]="[eventDetails.lat, eventDetails.lng]" [markers]="[{ lngLat: [eventDetails.lng, eventDetails.lat], id: 'event-marker' }]"></app-map>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>

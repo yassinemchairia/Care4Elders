@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Statistiques des réclamations</h2>
+    <div class="form-group">
+      <label for="selectedDate">Sélectionner une date :</label>
+      <input type="date" class="form-control" id="selectedDate" [(ngModel)]="selectedDate" (change)="onChangeDate()">
+    </div>
+    <div>
+      <canvas id="reclamationsChart" width="400" height="400"></canvas>
+    </div>
+  </div>
+  

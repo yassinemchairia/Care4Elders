@@ -1,0 +1,40 @@
+<h2>Liste des réclamations non répondues</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th class="col-description">Description</th>
+            <th class="col-date">Date de création</th>
+            <th class="col-type">Type de réclamation</th>
+            <th class="col-type">Etat</th>
+            <th class="col-type">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reclamation of reclamations" [ngClass]="{
+            'importance-red': reclamation.importance >= 4.0,
+            'importance-purple': reclamation.importance < 4.0 && reclamation.importance > 2.0,
+            'importance-yellow': reclamation.importance <= 2.0,
+        'black-text': true 
+          }">
+        <tr *ngFor="let reclamation of reclamationsNonRepondues">
+            <td>{{ reclamation.description }}</td>
+            <td>{{ reclamation.dateCreation }}</td>
+            <td>{{ reclamation.typeReclamation }}</td>
+            <td>
+                <ng-container *ngIf="reclamation.resolue; else nonTraite">
+                  Résolue
+                </ng-container>
+                <ng-template #nonTraite>
+                  Non traitée
+                </ng-template>
+              </td>
+            <td>
+                <button *ngIf="!reclamation.resolue" (click)="onRepondre(reclamation.idReclamation)">Répondre</button>
+              </td>
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="reclamationsNonRepondues.length === 0" class="no-reclamations-message">
+    Aucune réclamation non répondues pendant deux jours.
+  </p>

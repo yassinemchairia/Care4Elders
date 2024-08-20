@@ -1,0 +1,24 @@
+<div class="tri-dropdown">
+    <label for="tri-select">Trier par bénéfice :</label>
+    <select id="tri-select" [(ngModel)]="tri" (change)="trierProduits()">
+      <option value="desc">Décroissant</option>
+      <option value="asc">Croissant</option>
+    </select>
+  </div>
+  <div class="produits-container">
+    <div class="benefice-total" *ngIf="produitsAvecBenefices">
+      <h2>Bénéfice total de tous les produits : {{ beneficeTotal }}TND</h2>
+    </div>
+   
+    <div class="produit-card" *ngFor="let produit of produitsAvecBenefices">
+      <img [src]="produit.produit.image" alt="{{ produit.produit.nomproduit }}" width="100" height="100">
+      <h3>{{ produit.produit.nomproduit }}</h3>
+      <p>Description : {{ produit.produit.description }}</p>
+      <p>Prix : {{ produit.produit.prix }}</p>
+      <p [ngClass]="{'zero-benefice': produit.benefice === 0, 'non-zero-benefice': produit.benefice !== 0}">
+        Bénéfice : {{ produit.benefice }}
+      </p>
+      <button class="modifier-button" (click)="modifierProduit(produit.produit.idProduit)">Modifier</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,65 @@
+<div class="templatemo-content-container">
+    <br>
+    <div class="file-input">
+         <button class="custom-button" (click)="Ajouter()">Ajouter Actitvy</button>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Activités</div>
+        <div class="panel-body">
+            <div class="panel-body d-flex justify-content-center mb-3 search-input-container">
+                <input type="text" [(ngModel)]="searchText" class="search-input" placeholder="Search...">
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom Activité</th>
+                        <th>Date</th>
+                        <th>Type </th>
+                        <th>Rate</th>
+                        <th>Likes</th>
+                        <th>DisLikes</th>
+                        <th>Etat</th>
+                        <th>image</th>
+
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let activity of activities | filter: searchText | paginate: { itemsPerPage: pageSize, currentPage: page }">
+                        <td>{{ activity.nomActivity }}</td>
+                        <td>{{ activity.dateActivity }}</td>
+                        <td>{{ activity.typeActivity }}</td>
+                        <td>{{ activity.rating }}</td>
+                        <td>{{ activity.likeActivity }}</td>
+                        <td>{{ activity.dislikeActivity }}</td>
+                        <td>{{ activity.etat }}</td>
+                        <td><img [src]="activity.image" alt="{{ activity.nomActivity }}" style="max-width: 200px; max-height: 200px;"></td>
+
+                        <td *ngIf="activity.etat === 'EN_ATTENTE'">
+                            <button type="button" class="btn accept-button" (click)="accepter(activity.idActivity)">
+                                Accepter
+                            </button>
+                        </td>
+                        <td *ngIf="activity.etat === 'EN_ATTENTE'">
+                            <button type="button" class="btn refuse-button" (click)="refuser(activity.idActivity)">
+                                Refuser
+                            </button>
+                        </td>
+                        <td>
+                            <button (click)="modifier(activity.idActivity)" class="btn edit-button">
+                                Edit
+                            </button>
+                        </td>
+                        <td>
+
+                            <button (click)="delete(activity.idActivity)" class="btn delete-button">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+
+<div class="templatemo-content-container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Death List</div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Etat</th>
+                        <th>Date de naissance</th>    
+                        <th>Date de decede</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listeDeath">
+                        <td>{{ item.nom }} {{ item.prenom }}</td>
+                        <td>{{ item.typatient }}</td>
+                        <td>{{ item.datedeNais | date:'dd/MM/yyyy' }}</td>
+                      <td>{{ today | date:'shortDate' }}</td>
+                      <td>
+                        <button type="button" class="btn btn-danger" (click)="unassignPatientFromMorgue(item.idpatient)">Désaffecter de la morgue</button>
+                    </td> 
+                    </tr>
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

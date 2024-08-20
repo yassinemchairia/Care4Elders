@@ -1,0 +1,42 @@
+<div class="templatemo-content-container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Modifier une Ambulance</div>
+    <div class="panel-body">
+      <form>
+        <!-- Autres champs de l'ambulance -->
+        <div class="form-group">
+          <label for="nomEtab">Marque</label>
+          <input type="text" class="form-control" [(ngModel)]="ambulance.marque" [ngModelOptions]="{standalone: true}" placeholder="nomEtab">
+        </div>
+        <div class="form-group">
+          <label for="numFixe">Matricule</label>
+          <input type="text" class="form-control" [(ngModel)]="ambulance.matricule" [ngModelOptions]="{standalone: true}" placeholder="numFixe">
+        </div>
+        <div class="form-group">
+          <label for="typeEtab">État Ambulance</label>
+          <select class="form-control" [(ngModel)]="ambulance.etatAmb" [ngModelOptions]="{standalone: true}">
+            <option value="FONCTIONNELLE">Fonctionnelle</option>
+            <option value="PANNE">Panne</option>
+            <option value="MAINTENANCE">Maintenance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nbLits">Date Dernier Entretien</label>
+          <input type="date" class="form-control" [(ngModel)]="ambulance.dateDernEntret" [ngModelOptions]="{standalone: true}" placeholder="nbLits">
+        </div>
+
+        <!-- Champ ambulancier -->
+        <!-- <div class="form-group">
+          <label for="ambilancier">Ambulancier</label>
+          <select class="form-control" [(ngModel)]="selectedAmbulancier" [ngModelOptions]="{standalone: true}" (ngModelChange)="onSelectAmbulancier(selectedAmbulancier)">
+            <option [ngValue]="ambulance.ambilancier?.idAmbilancier" disabled selected>Sélectionner un Ambulancier</option>
+            <option *ngFor="let chauff of listambulanciers" [ngValue]="{ id: chauff.idAmbilancier, nom: chauff.nom }">{{ chauff.nom }}</option>
+          </select>
+        </div> -->
+
+        <!-- Bouton pour enregistrer -->
+        <button type="button" class="btn btn-primary" (click)="updateAmbulance()">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+</div>

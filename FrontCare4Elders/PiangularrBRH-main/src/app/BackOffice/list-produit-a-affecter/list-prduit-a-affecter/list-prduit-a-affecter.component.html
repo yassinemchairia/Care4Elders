@@ -1,0 +1,24 @@
+<div class="templatemo-content-container">
+  <h2>Liste des produits à affecter</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nom du produit</th>
+        <th>Description</th>
+        <th>Prix</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produit of produits">
+        <td>{{ produit.nomproduit }}</td>
+        <td>{{ produit.description }}</td>
+        <td>{{ produit.prix }}</td>
+        <td>
+          <button (click)="affecterProduitAuShop(produit.idProduit)" class="btn btn-primary">Affecter</button>
+   
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

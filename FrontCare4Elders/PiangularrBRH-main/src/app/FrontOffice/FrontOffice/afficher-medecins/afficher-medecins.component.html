@@ -1,0 +1,35 @@
+<div class="templatemo-content-container" (click)="handleOutsideClick($event)">
+  <div class="input-group mb-3">
+    <div class="col-md-6"> 
+      <input type="text" class="form-control custom-input" placeholder="Rechercher" [(ngModel)]="searchTerm" />
+    </div>
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="button" (click)="rechercher()">Rechercher</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div *ngFor="let item of medecins" class="col-md-4 mb-3">
+    <div class="custom-block custom-block-full">
+      <div class="custom-block-image-wrap">
+        <img src="assets\FrontOffice\images\medecin-min.jpg" class="custom-block-image img-fluid" alt="">
+      </div>
+    
+      <div class="custom-block-info">
+        <h3 class="mb-2"><a>{{ item.nom }}</a></h3>
+        <p class="mb-0">{{ item.prenom }}</p>
+        <h1 class="mb-2"><a>{{ item.etablissement.nomEtab }}</a></h1>
+        <div class="custom-block-bottom d-flex justify-content-between mt-3">
+          <a class="fa-solid fa-user-doctor">
+            <span>Specialité: {{ item.specialite }}</span>
+          </a>
+          <a class="fa-solid fa-user-doctor">
+            <span>Disponible: {{ item.disponible }}</span> 
+          </a>
+        </div>
+        <a class="btn btn-success" [routerLink]="'/Rdv/' + item.idMedecin">Passer Rdv</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div *ngIf="reclamationsWithResponses">
+    <h2>Mes Réclamations</h2>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Date de création</th>
+          <th>Type</th>
+          <th>Contenu de la réponse</th>
+          <th>Date de réponse</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let entry of reclamationsWithResponses | keyvalue">
+          <tr *ngIf="entry.value?.reclamation">
+            <td>{{ entry.value.reclamation.description }}</td>
+            <td>{{ entry.value.reclamation.dateCreation }}</td>
+            <td>{{ entry.value.reclamation.typeReclamation }}</td>
+            <td>{{ entry.value.contenu || 'N/A' }}</td>
+            <td>{{ entry.value.dateReponse || 'N/A' }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <div *ngIf="!showForm">
+      <button (click)="showForm = true">Ajouter Réclamation</button>
+    </div>
+    <div *ngIf="tentativesRestantes > 0">
+      <div *ngIf="showForm">
+        <form [formGroup]="reclamationForm" (ngSubmit)="onSubmit()">
+          <h2>Ajouter Réclamation</h2>
+          <div>
+            <label>Description:</label>
+            <input type="text" formControlName="description">
+          </div>
+          <div>
+            <label>Type de Réclamation:</label>
+            <select formControlName="typeReclamation">
+              <option *ngFor="let type of reclamationService.typesReclamation" [value]="type">{{ type }}</option>
+            </select>
+          </div>
+          <!-- Autres champs de formulaire -->
+  
+          <button (click)="showForm = true" [disabled]="tentativesRestantes === 0">Ajouter Réclamation</button>
+  
+        </form>
+      </div>
+    </div>
+    <div *ngIf="tentativesRestantes === 0">
+      <p>Vous avez dépassé le nombre maximal de tentatives pour ajouter une réclamation contenant des gros mots.</p>
+    </div>
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+    
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+  

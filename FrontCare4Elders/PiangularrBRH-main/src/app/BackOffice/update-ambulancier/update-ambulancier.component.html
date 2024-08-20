@@ -1,0 +1,8 @@
+<form>
+    <div class="form-group">
+      <label for="Nom">Nom</label>
+      <input type="text" class="form-control"   [(ngModel)]="ambulancier.nom" [ngModelOptions]="{standalone: true}" placeholder="Nom">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="modifierAmbulancier()">Enregistrer</button>
+  </form>

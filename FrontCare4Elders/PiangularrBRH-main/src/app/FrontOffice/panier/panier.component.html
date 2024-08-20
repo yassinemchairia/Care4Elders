@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Panier</h1>
+
+  <div *ngIf="panierVide; else panierNonVide">
+    <button class="btn btn-primary" (click)="commencerVosAchats()">Commencer vos achats</button>
+  </div>
+
+  <ng-template #panierNonVide>
+    <div *ngFor="let produit of produitsDansPanier" class="card mb-3">
+      <div class="card-body">
+        <img [src]="produit.image" alt="Image du produit" class="produit-image">
+        <h5 class="card-title">{{ produit.nom_produit }}</h5>
+        <p class="card-text">{{ produit.description }}</p>
+        <p class="card-text">Prix: <span class="font-weight-bold">{{ produit.prix }}</span></p>
+
+        <div class="quantite-section input-group">
+          <button class="btn btn-danger" (click)="decrementQuantite(produit)">-</button>
+          <input type="number" class="form-control form-control-sm" [(ngModel)]="produit.quantite" (change)="updateQuantite(produit, produit.quantite)">
+          <button class="btn btn-success" (click)="incrementQuantite(produit)">+</button>
+        </div>
+
+        <button class="btn btn-danger btn-sm" (click)="supprimerProduit(produit.idProduit)">Supprimer</button>
+      </div>
+    </div>
+
+    <ng-template #noProducts>
+      <p>Aucun produit dans le panier pour le moment.</p>
+    </ng-template>
+
+    <hr>
+
+    <div class="row">
+      <div class="col">
+        <h5>Total:TND</h5>
+      </div>
+      <div class="col">
+        <h5 class="text-right">{{ montantTotal }}TND</h5>
+        <button class="btn btn-primary" (click)="passerCommande()">Passer Commande</button>
+      </div>
+    </div>
+  </ng-template>
+</div>

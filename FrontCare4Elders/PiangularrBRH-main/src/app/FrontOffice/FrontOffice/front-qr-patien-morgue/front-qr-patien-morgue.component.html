@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="text-center mt-4">Death List</h1>
+  <div class="row mt-4">
+    <div class="col-md-4" *ngFor="let patientId of getKeys(qrCodeLinks)">
+      <div class="card mb-3">
+        <div class="card-header">
+          QR Code
+        </div>
+        <div class="card-body text-center">
+          <img [src]="qrCodeLinks[patientId]" class="img-fluid" alt="QR Code">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="templatemo-content-container">
+    <button class="btn btn-success mb-3" (click)="buttonAjouter()">Ajouter Produit</button>
+
+    <table class="table custom-table"> <!-- Ajout de la classe custom-table -->
+        <thead>
+            <tr>
+                <th>Nomproduit</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of prduits"> <!-- Correction de la variable prduits à produits -->
+                <td>{{ item.nomproduit }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.prix }}TND</td>
+                <td>
+                    <img [src]="item.image" class="custom-block-image img-fluid" alt=""> <!-- Déplacer l'image dans la colonne -->
+                </td>
+                <td>
+                    <button (click)="buttonModifier(item.idProduit)" class="btn btn-info">Edit</button>
+                    <button (click)="delete(item.idProduit)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

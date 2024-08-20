@@ -1,0 +1,91 @@
+<div class="container">
+  
+  <div class="mode-paiement">
+    <h3>Mode de paiement:</h3>
+    <label class="radio-label">
+      <input type="radio" name="modePaiement" [(ngModel)]="modePaiement" value="CARTE_BANCAIRE" class="radio-input">
+      <span class="radio-custom"></span> Carte bancaire
+    </label>
+    <label class="radio-label">
+      <input type="radio" name="modePaiement" [(ngModel)]="modePaiement" value="CACHE" class="radio-input">
+      <span class="radio-custom"></span> Espèces
+    </label>
+
+    <!-- Formulaire pour la carte bancaire -->
+    <div *ngIf="modePaiement === 'CARTE_BANCAIRE'" class="carte-bancaire-form">
+      <div class="form-group">
+        <label for="numeroCarte">Numéro de carte:</label>
+        <input type="text" id="numeroCarte" name="numeroCarte" [(ngModel)]="numeroCarte" required pattern="[0-9]{8}">
+        <small class="small-message" *ngIf="!numeroCarte || numeroCarte.length !== 8">Le numéro de carte doit contenir 8 chiffres.</small>
+      </div>
+    
+      <div class="form-group">
+        <label for="dateExpirationMois">Date d'expiration:</label>
+        <select id="dateExpirationMois" name="dateExpirationMois" [(ngModel)]="dateExpirationMois" required>
+          <option *ngFor="let mois of moisList" [value]="mois">{{ mois }}</option>
+        </select>
+    
+        <select id="dateExpirationAnnee" name="dateExpirationAnnee" [(ngModel)]="dateExpirationAnnee" required>
+          <option *ngFor="let annee of anneeList" [value]="annee">{{ annee }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pays">Pays:</label>
+        <select id="pays" name="pays" [(ngModel)]="pays">
+          <option value="+216">Tunisie (+216)</option>
+          <option value="+93">Afghanistan (+93)</option>
+          <option value="+355">Albanie (+355)</option>
+          <option value="+213">Algérie (+213)</option>
+          <option value="+376">Andorre (+376)</option>
+          <option value="+244">Angola (+244)</option>
+          <option value="+1">Anguilla (+1)</option>
+          <option value="+54">Argentine (+54)</option>
+          <option value="+374">Arménie (+374)</option>
+          <option value="+297">Aruba (+297)</option>
+          <option value="+61">Australie (+61)</option>
+      
+          <!-- Ajoutez d'autres pays avec leurs codes ici -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="numeroTelephone">Numéro de téléphone:</label>
+        <input type="text" id="numeroTelephone" name="numeroTelephone" [(ngModel)]="numeroTelephone" required pattern="[0-9]{8}">
+        <small class="small-message" *ngIf="!numeroTelephone || numeroTelephone.length !== 8">Le numéro de téléphone doit contenir 8 chiffres.</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="codeSecurite">Code de sécurité:</label>
+        <input type="text" id="codeSecurite" name="codeSecurite" [(ngModel)]="codeSecurite" required pattern="[0-9]{3}">
+        <small class="small-message" *ngIf="!codeSecurite || codeSecurite.length !== 3">Le code de sécurité doit contenir 3 chiffres.</small>
+      </div>
+    </div>
+    
+
+    <!-- Formulaire pour le paiement en espèces -->
+    <div *ngIf="modePaiement === 'CACHE'" class="especes-form">
+      <!-- Ajoutez les champs supplémentaires pour le paiement en espèces ici -->
+    </div>
+  </div>
+
+  <div class="commande-details">
+    <div class="details-cadre">
+      <h2>Détails de la commande</h2>
+      <p>Montant total: {{ commandeDetails?.montantTotal }}</p>
+      <h3>Produits dans le panier:</h3>
+      <ul>
+        <li *ngFor="let produit of (commandeDetails?.produitsDansPanier || [])" class="product-item">
+          <p class="detail-label">Nom:</p> <p class="detail-value">{{ produit?.nomproduit }}</p>
+          <p class="detail-label">Description:</p> <p class="detail-value">{{ produit?.description }}</p>
+          <p class="detail-label">Prix:</p> <p class="detail-value">{{ produit?.prix }}</p>
+          <!-- Ajoutez d'autres propriétés du produit selon vos besoins -->
+        </li>
+      </ul>
+    </div>
+    <button class="valider-button" (click)="validerCommande()">Valider commande</button>
+  </div>
+</div>
+
+<div *ngIf="commandeValidee">
+  <p>La commande a été validée avec succès.</p>
+  <button (click)="voirProduits()">Voir produits</button>
+</div>

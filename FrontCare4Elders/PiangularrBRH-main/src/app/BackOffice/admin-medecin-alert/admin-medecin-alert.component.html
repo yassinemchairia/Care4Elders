@@ -1,0 +1,17 @@
+<!-- admin-medecin-alert.component.html -->
+<div class="card-container" *ngIf="alertm.length > 0">
+  <div class="card" *ngFor="let item of alertm">
+    <div class="card-body">
+      <h2>{{ item.medecin.nom }} {{ item.medecin.prenom }}</h2>
+      <p>Spécialité : {{ item.medecin.specialite }}</p>
+      <p>Adresse : {{ item.medecin.adresse }}</p>
+      <p>Nombre d'alertes : {{ item.alertCount }}</p>
+      <!-- Ajoutez d'autres informations que vous souhaitez afficher -->
+      <button class="btn-envoyer" (click)="envoyerMail(item.medecin.idMedecin)">Envoyer un mail</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="alertm.length === 0">
+  <p>Aucune donnée disponible.</p>
+</div>
+

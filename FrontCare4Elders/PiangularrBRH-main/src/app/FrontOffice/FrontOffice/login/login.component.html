@@ -1,0 +1,14 @@
+
+<div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="email" name="email" placeholder="name@example.com">
+  </div>
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="password" class="col-form-label">Password</label>
+    </div>
+    <div class="mb-3">
+      <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" aria-describedby="passwordHelpInline">
+    </div>
+    <button type="button" class="btn btn-success" (click)="login()">Success</button>
+  </div>

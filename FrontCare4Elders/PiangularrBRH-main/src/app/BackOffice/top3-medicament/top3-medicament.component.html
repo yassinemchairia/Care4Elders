@@ -1,0 +1,28 @@
+<mat-form-field>
+    <input matInput [matDatepicker]="startDatePicker" placeholder="Date de début" [(ngModel)]="startDate" (dateChange)="getTopMedicaments()">
+    <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #startDatePicker></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="endDatePicker" placeholder="Date de fin" [(ngModel)]="endDate" (dateChange)="getTopMedicaments()">
+    <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #endDatePicker></mat-datepicker>
+  </mat-form-field>
+  
+
+    <div class="row">
+        <div class="col-md-4" *ngFor="let item of top">
+            <div class="card mb-3">
+                <img [src]="item.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.nomMed }}</h5>
+                    <p class="card-text">{{ item.descMed }}</p>
+                    <p class="card-text">Prix: {{ item.prixMed }}</p>
+                    <p class="card-text">Date: {{ item.dateMed }}</p>
+                    <p class="card-text">Catégorie: {{ item.catMedicament }}</p>
+                 
+                </div>
+            </div>
+        </div>
+    </div>

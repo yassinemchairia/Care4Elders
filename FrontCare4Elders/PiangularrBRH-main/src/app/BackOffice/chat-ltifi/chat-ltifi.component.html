@@ -1,0 +1,12 @@
+<div *ngIf="medecins.length > 0; else noMedecins">
+    <h2>Liste des médecins :</h2>
+    <ul>
+      <li *ngFor="let medecin of medecins">
+        {{ medecin.nom }}
+      </li>
+    </ul>
+  </div>
+  <ng-template #noMedecins>
+    <p>Aucun médecin trouvé.</p>
+  </ng-template>
+  

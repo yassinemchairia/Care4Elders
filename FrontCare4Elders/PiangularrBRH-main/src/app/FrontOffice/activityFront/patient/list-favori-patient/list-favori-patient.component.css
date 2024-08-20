@@ -1,0 +1,38 @@
+.custom-image {
+    max-width: 100%; /* Largeur maximale de l'image */
+    height: auto; /* Hauteur automatique pour conserver les proportions */
+  }
+ 
+  
+  .card-img-container {
+    max-height: 200px; /* Hauteur maximale de l'image */
+    overflow: hidden; /* Masquer le contenu qui dépasse */
+  }
+  
+  .card-img-top {
+    width: 100%; /* Largeur de l'image à 100% */
+    height: auto; /* Hauteur automatique pour conserver les proportions */
+    object-fit: cover; /* Redimensionnement de l'image pour remplir le conteneur */
+  }
+  .custom-title {
+    font-size: 1.5rem; /* Taille de la police du titre (par exemple 1.5rem) */
+    font-weight: bold; /* Poids de la police (gras) */
+    text-align: center; /* Centrage du texte */
+    margin-bottom: 1rem; /* Marge inférieure pour espacement */
+  }
+  .red-text {
+    color: rgb(165, 44, 44); /* Définir la couleur du texte en rouge */
+  }
+  .return-button {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte blanc */
+    padding: 10px 20px; /* Espacement intérieur du bouton */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de type pointeur au survol */
+    font-weight: bold; /* Texte en gras */
+  }
+  
+  .return-button:hover {
+    background-color: #0056b3; /* Couleur de fond bleue plus foncée au survol */
+  }

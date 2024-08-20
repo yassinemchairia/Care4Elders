@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Ajouter Malade</div>
+                <div class="card-body">
+                    <form (submit)="ajouterMaladie()">
+                        <div class="form-group">
+                            <label for="nomEtab">Nom Malade</label>
+                            <input type="text" class="form-control" [(ngModel)]="maladie.nom" [ngModelOptions]="{standalone: true}" placeholder="Nom Malade">
+                        </div>
+        
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

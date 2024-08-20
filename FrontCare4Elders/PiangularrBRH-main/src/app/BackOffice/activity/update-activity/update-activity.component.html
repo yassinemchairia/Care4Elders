@@ -1,0 +1,47 @@
+<div class="templatemo-content-container">
+    <form>
+      <div class="mb-3">
+        <label for="nomActivity" class="form-label">Nom de l'activité</label>
+        <input [(ngModel)]="activity.nomActivity" name="nomActivity" type="text" class="form-control" id="nomActivity" placeholder="Nom de l'activité">
+      </div>
+     
+
+      <div class="mb-3">
+        <div class="input-group">
+          <img [src]="activity.image" alt="Ancienne Image" style="width: 20%;height: 20%;" class="mr-2">
+          <input type="file" style="display: none;" #fileInput accept="image/*" (change)="onFileSelected($event)">
+              <button type="button" class="btn btn-secondary" (click)="fileInput.click()">Modifier Image</button>
+        </div> </div>
+      <div class="mb-3">
+        <label for="dateActivity" class="form-label">Date de l'activité</label>
+        <input [(ngModel)]="activity.dateActivity" name="dateActivity" type="date" class="form-control" id="dateActivity">
+      </div>
+      <div class="mb-3">
+        <label for="rating" class="form-label">Note</label>
+        <input [(ngModel)]="activity.rating" name="rating" type="number" class="form-control" id="rating" placeholder="Note">
+      </div>
+      <div class="mb-3">
+        <label for="performance" class="form-label">Performance</label>
+        <input [(ngModel)]="activity.performance" name="performance" type="text" class="form-control" id="performance" placeholder="Performance">
+      </div>
+      <div class="mb-3">
+        <label for="typeActivity" class="form-label">Type d'activité</label>
+        <select [(ngModel)]="activity.typeActivity" name="typeActivity" class="form-select" id="typeActivity">
+          <option value="ONLINE_FITNESS">Online fitness</option>
+          <option value="VIRTUAL_YOGA">Virtual yoga</option>
+          <option value="GUIDED_MEDITATION">Guided meditation</option>
+          <option value="VIRTUAL_COOKING">Virtual cooking</option>
+          <option value="CONTINUING_EDUCATION">Contiuining education</option>
+          <option value="VIRTUAL_BOOK_CLUB">virtual book club</option>
+          <option value="ONLINE_GAMES">Online Games</option>
+
+         
+          <!-- Ajoutez d'autres options selon vos besoins -->
+        </select>
+      </div>
+      <div class="col-3">
+        <button (click)="update()" class="btn btn-primary">Mettre à jour</button>
+      </div>
+    </form>
+  </div>
+  

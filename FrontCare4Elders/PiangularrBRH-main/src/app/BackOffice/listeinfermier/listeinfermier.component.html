@@ -1,0 +1,39 @@
+<div class="templatemo-content-container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Infirmiers</div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom Infirmier</th>
+                        <th>Prenom</th>
+                        <th>Etablissement</th>
+                        <th>Delete</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listeInfermiers">
+                        <td>{{ item.nom }}</td>
+                        <td>{{ item.prenom }}</td>
+                        <td>
+                            <ng-container *ngIf="item.etablissement">
+                                {{ item.etablissement.nomEtab }}
+                            </ng-container>
+                            <select *ngIf="!item.etablissement" class="form-control" [(ngModel)]="item.selectedEtab">
+                                <option *ngFor="let etab of listeEtablissements" [value]="etab.idEtab">{{ etab.nomEtab }}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button (click)="delete(item.idInfermier)" class="btn btn-danger">Delete</button>
+                        </td>
+                        <td>
+                            <button *ngIf="!item.etablissement" (click)="affecterInfermierToEtab(item.idInfermier, item.selectedEtab)" class="btn btn-primary mr-1">Affecter</button>
+                            <button *ngIf="item.etablissement" (click)="desactiverInfermier(item.idInfermier)" class="btn btn-warning mr-1">Désaffecter</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

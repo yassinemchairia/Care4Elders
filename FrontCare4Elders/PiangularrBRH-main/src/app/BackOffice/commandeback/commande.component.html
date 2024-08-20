@@ -1,0 +1,26 @@
+<div *ngIf="commandesEnAttente.length > 0">
+  <h2>Commandes en attente</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ModePay</th>
+        <th>Montant total</th>
+        <th>Date de commande</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commande of commandesEnAttente">
+        <td>{{ commande.modePay }}</td>
+        <td>{{ commande.montantTotal }}</td>
+        <td>{{ commande.date_commande }}</td>
+        <td>
+          <button (click)="validerCommande(commande.id)">Valider commande</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="commandesEnAttente.length === 0">
+  <p>Aucune commande en attente.</p>
+</div>

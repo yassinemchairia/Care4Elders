@@ -1,0 +1,13 @@
+<div class="templatemo-content-container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let item of alertss">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.datedalert }}</h5>
+                    <p class="card-text">{{ item.message }}</p>
+                    <button (click)="accteptermedecin(item.idalert)" type="button" class="btn btn-primary">Accepter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

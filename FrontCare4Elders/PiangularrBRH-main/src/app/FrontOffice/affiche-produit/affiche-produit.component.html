@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <!-- Colonne de gauche -->
+    <div class="col-md-6">
+      <div class="search-container">
+        <input type="text" placeholder="Rechercher par nom de produit" class="search-input" (input)="rechercherProduitsParNom($event)">
+      </div>
+      <div class="header">
+        <div class="custom-select-container">
+          <select class="custom-select" [(ngModel)]="triParPrix" (change)="trierProduits()">
+            <option value="ascendant">Prix croissant</option>
+            <option value="descendant">Prix décroissant</option>
+          </select>
+        </div>
+      </div>
+      <div class="produit-container">
+        <!-- Affichage des produits -->
+        <div *ngFor="let produit of getPaginatedProducts()" class="produit-card">
+          <div class="produit-details">
+            <img [src]="produit.image" alt="Image du produit" class="produit-image">
+            <h3 class="produit-title">Nom: {{ produit.nomproduit }}</h3>
+            <p class="produit-description">DESCRIPTION:{{ produit.description }}</p>
+            <p class="produit-price">Prix: {{ produit.prix }}TND</p>
+            <button class="produit-add-button" (click)="addToPanier($event, produit)">Ajouter au panier</button>
+            <button class="favoris-button" *ngIf="!produit.favoris" (click)="ajouterAuxFavoris(produit)">
+              <svg class="heart-icon" viewBox="0 0 24 24">
+                <path d="M20.84,4.49a5.5,5.5,0,0,0-7.78,0l-1.06,1.06L12,6.21,11.05,5.55,8.89,3.29a5.5,5.5,0,0,0-7.78,7.78L12,20.94l7.78-7.78a5.5,5.5,0,0,0,0-7.78Z"></path>
+              </svg>
+            </button>
+            <button class="favoris-button-filled" *ngIf="produit.favoris" (click)="supprimerDesFavoris(produit)">
+              <svg class="heart-icon-filled" viewBox="0 0 24 24">
+                <path d="M12,20.94,4.22,13.16a5.5,5.5,0,0,1,0-7.78l1.06-1.06L12,10.89l6.72-6.72,1.06,1.06a5.5,5.5,0,0,1,0,7.78Z"></path>
+              </svg>
+            </button>
+            <div *ngIf="produit.successMessage || produit.errorMessage" class="alert" [ngClass]="{'alert-show': produit.successMessage || produit.errorMessage}">
+              {{ produit.successMessage || produit.errorMessage }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <button (click)="prevPage()" [disabled]="currentPage === 1">&lt;&lt;</button>
+        <span>Page {{ currentPage }} sur {{ getTotalPages() }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()">&gt;&gt;</button>
+      </div>
+      <div *ngIf="!produits || produits.length === 0">
+        <p>Aucun produit disponible.</p>
+      </div>
+    </div>
+
+    <!-- Colonne de droite -->
+    <div class="col-md-6">
+      <div class="resultat-produit-le-plus-commande">
+        <h3>Produit le plus commandé</h3>
+        <div *ngIf="produitLePlusCommande">
+          <img [src]="produitLePlusCommande.image" alt="Image du produit" class="produit-image">
+          <p>Nom: {{ produitLePlusCommande.nomproduit }}</p>
+          <p>Description: {{ produitLePlusCommande.description }}</p>
+          <p>Prix: {{ produitLePlusCommande.prix }}TND</p>
+        </div>
+        <div *ngIf="!produitLePlusCommande">
+          <p>Aucun produit le plus commandé n'est disponible pour le moment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

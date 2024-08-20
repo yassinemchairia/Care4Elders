@@ -1,0 +1,10 @@
+<h2>Ajouter une réponse à la réclamation</h2>
+
+<form (submit)="ajouterReponse1()">
+  <div class="form-group">
+    <label for="reponse">Réponse :</label>
+    <textarea id="reponse" name="reponse" class="form-control" [(ngModel)]="reponse.contenu"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>

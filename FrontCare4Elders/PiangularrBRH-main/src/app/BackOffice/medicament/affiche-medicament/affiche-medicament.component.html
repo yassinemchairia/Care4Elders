@@ -1,0 +1,20 @@
+<div class="templatemo-content-container">
+    <button class="btn btn-success mb-3" (click)="AjouterMed()">Ajouter Medicament</button>
+
+    <div class="row">
+        <div class="col-md-4" *ngFor="let item of medicaments">
+            <div class="card mb-3">
+                <img [src]="item.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.nomMed }}</h5>
+                    <p class="card-text">{{ item.descMed }}</p>
+                    <p class="card-text">Prix: {{ item.prixMed }}</p>
+                    <p class="card-text">Date: {{ item.dateMed }}</p>
+                    <p class="card-text">Catégorie: {{ item.catMedicament }}</p>
+                    <button (click)="modifierM(item.idMedicament)" class="btn btn-info">Edit</button>
+                    <button (click)="delete(item.idMedicament)" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

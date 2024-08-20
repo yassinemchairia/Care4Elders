@@ -1,0 +1,127 @@
+.commandes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.commandes-table th,
+.commandes-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.commandes-table th {
+    background-color: #f2f2f2;
+}
+
+.even-row {
+    background-color: #f9f9f9;
+}
+
+.odd-row {
+    background-color: #ffffff;
+}
+
+.separator-row td {
+    border: none;
+    height: 10px;
+}
+
+.valider-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+}
+
+.valider-button:hover {
+    background-color: #45a049;
+}
+.validation-message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #06db37;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
+.resultat-produit-le-plus-commande {
+    background-color: #3bf56a;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .resultat-produit-le-plus-commande h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+   
+  }
+  
+  .resultat-produit-le-plus-commande p {
+    font-size: 16px;
+    color: #f80303;
+    margin-bottom: 5px;
+  }
+  
+  .resultat-produit-le-plus-commande .produit-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .resultat-produit-le-plus-commande .produit-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .resultat-produit-le-plus-commande .alert {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #d1e7dd;
+    color: #28b463;
+    display: none;
+  }
+  
+  .resultat-produit-le-plus-commande .alert-show {
+    display: block;
+  }
+  /* Stylisation pour la section des détails de l'utilisateur */
+.user-details-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .user-details-container h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .user-details-container p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  /* Effets de transition */
+  .user-details-container {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .user-details-container.hidden {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  

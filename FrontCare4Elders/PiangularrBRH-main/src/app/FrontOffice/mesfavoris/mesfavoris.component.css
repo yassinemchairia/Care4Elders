@@ -1,0 +1,76 @@
+/* Container pour les produits favoris */
+.favoris-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Style pour les items de favoris */
+.favoris-item {
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: #fff;
+}
+
+/* Effet de survol sur les items de favoris */
+.favoris-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Style pour les détails des produits favoris */
+.favoris-details {
+  margin-bottom: 15px;
+}
+
+/* Style pour le titre des produits favoris */
+.favoris-title {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Style pour la description des produits favoris */
+.favoris-description {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Style pour le prix des produits favoris */
+.favoris-price {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #21b300;
+}
+
+/* Style pour l'image des produits favoris */
+.produit-image {
+  max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur */
+  height: auto; /* Hauteur automatique pour maintenir le ratio d'aspect */
+  border-radius: 5px; /* Ajoutez une bordure arrondie */
+}
+
+/* Style pour le bouton de suppression des produits favoris */
+.favoris-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet de survol sur le bouton de suppression des produits favoris */
+.favoris-button:hover {
+  background-color: #c82333;
+}
+
+/* Style pour l'étiquette "Nom:", "Description:", "Prix:" */
+.label {
+  font-weight: bold;
+  color: #0081f3;
+}

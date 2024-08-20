@@ -1,0 +1,49 @@
+.accept-button {
+    background-color: #007bff; /* Bleu */
+    color: #fff; /* Texte blanc */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.refuse-button {
+    background-color: #ffc107; /* Jaune */
+    color: #212529; /* Texte sombre */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+.edit-button {
+    background-color: #0a2843; /* Gris */
+    color: #fff; /* Texte blanc */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.delete-button {
+    background-color: #dc3545; /* Rouge */
+    color: #fff; /* Texte blanc */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+.search-input-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff; /* Bleu clair lorsqu'il est en focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
